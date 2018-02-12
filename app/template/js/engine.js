@@ -4,36 +4,13 @@ $(document).ready(function(){
 	$('#foo1').owlCarousel({
 		loop:false,
 		nav:true,
-		dots: false,
-		items:3,
-		startPosition : 2,
-		stagePadding : 250,
+		dots: true,
+		items:1,
+		autoplay : false,
+		animateOut: 'fadeOut',
+		autoplayTimeout : 6000,
 		navText: ["", ""],
-		onInitialized: function (event) {
-			refreshFirstLastVisible(event);
-		},
-		onChanged: function (event) {
-			refreshFirstLastVisible(event);
-		},
-		responsive:{
-			0:{
-				items:1,
-				stagePadding: 20
-			},
-			900:{
-				items:2,
-				stagePadding: 0
-			},
-			992:{
-				items:1
-			},
-			1250:{
-				items:2
-			},
-			1550:{
-				items:3
-			}
-		}
+		autoHeight:true
 	});
 
 

@@ -1,0 +1,111 @@
+/* =slider
+---------------------------*/
+.homecarousel{
+	margin-top: 3rem;
+	.item{
+		img{
+			display: block;
+			height: auto;
+			width: 100%;
+		}
+		.container{
+			left: 50%;
+			margin-left: -585px;
+			padding-top: 6.5rem;
+			position: absolute;
+			text-align: center;
+			text-transform: uppercase;
+			top: 0;
+		}
+		.description{
+			@include font-size(1.2);
+			background-color: rgba(5, 99, 191, .9);
+			color: $color2;
+			line-height: 2;
+			margin: 0 auto;
+			padding: 2rem;
+			width: 90%;
+		}
+
+		.title{
+			@include font-size(2.4);
+			background-color: $color9;
+			color: $color1;
+			display: inline-block;
+			line-height: 1;
+			margin-top: 7%;
+			padding: 1rem 12rem;
+		}
+
+		.more{ 
+			@extend .bold;
+			margin-top: 10%;
+			&:before{
+				content: "";
+				display: block;
+				width: 100%;
+			}
+			a{
+				@include font-size(1.5);
+				background-color: $color2;
+				color: $color1;
+				padding: 1rem 5.2rem;
+				text-decoration: none;
+				transition: .3s background-color, color ease-out;
+				&:hover{
+					color: $color3;
+					background-color: $color9;					
+				}
+			}
+		}
+	}
+
+	.owl{
+		&-dots{
+			@include justify-content(center);
+			bottom: 2.8rem;
+			display: flex;
+			position: absolute;
+			width: 100%;
+			.owl-dot{
+				border: 3px solid $color2;
+				height: 15px;
+				margin: 0 8px;
+				width: 15px;
+				@include rounded(50%);
+				&.active{
+					background: $color2;
+				}
+			}
+		}
+		&-nav{
+			position: absolute;
+			top: 0;
+			left: 50%;
+			margin-left: -585px;
+
+			width: 1170px;
+
+			top: 50%;
+			.owl-{
+				&prev,
+				&next{
+					background: url(../images/prevnext.png) no-repeat left top;
+					height: 43px;
+					position: absolute;
+					width: 28px;
+					&.disabled{
+						opacity: .6;
+					}
+				}
+
+				&next{
+					right: 0;
+					@include rotation(180deg);
+				}
+			}
+		}
+	}
+}
+/* =slider
+---------------------------*/

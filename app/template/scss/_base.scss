@@ -5,7 +5,11 @@ ul{list-style:none}
 $color1:#000;
 $color2:#fff;
 
-$color3:#f4f4f4;
+$color3:#0563bf;
+$color9:#ffc72a;
+
+
+
 $color4:#1a237e;
 $color5:#666;
 $color6:#ff5722;
@@ -34,6 +38,7 @@ html {
 
 
 body{
+	font-family: "SegoeUIRegular";
 	@include flexbox;
 	flex-flow: column;
 	font-display: swap;
@@ -46,11 +51,27 @@ html, body{
 }
 
 
+input,
+textarea{
+	font-family: "SegoeUIRegular";
+	@include font-size(1.3);
+	font-style: italic;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent !important; }
+input:focus:-moz-placeholder { color:transparent !important; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent !important; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent !important; } /* IE 10+ */
+
+
+textarea:focus::-webkit-input-placeholder { color:transparent !important; }
+textarea:focus:-moz-placeholder { color:transparent !important; } /* FF 4-18 */
+textarea:focus::-moz-placeholder { color:transparent !important; } /* FF 19+ */
+textarea:focus:-ms-textarea-placeholder { color:transparent !important; } /* IE 10+ */
+
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
 	//ie11
 }
-
-
 
 input::-moz-focus-inner{
 	border: 0;
@@ -66,23 +87,16 @@ input::-moz-focus-inner{
 
 
 
-// @supports (display: grid) {
-// 	.grid {
-// 		display: grid;
-// 		grid-template-rows: auto 1fr auto;
-// 		height: 100%;
-// 		grid-template-areas: "header"
-// 							 "main"
-// 							 "footer"
-// 	}
-// }
-
 
 
 /*** standart classes *****/
 p{}
 a{color:#020000}
-h1{font-size:2.5rem}
+h1, .title{
+	font-size:2.4rem;
+	@extend .bold;
+	font-weight: normal;
+}
 h2{font-size:2.4rem}
 h3{font-size:1.6rem}
 
@@ -94,18 +108,36 @@ input::-moz-focus-inner{
 	padding: 0;
 }
 
+
+/* font-family: "SegoeUIRegular"; */
 @font-face {
-	// font-family: 'ucb';
-	// src: url('../fonts/univers_condensed_bold.eot');
-	// src: url('../fonts/univers_condensed_bold.eot?#iefix') format('embedded-opentype'),
-	// 	 url('../fonts/univers_condensed_bold.woff') format('woff'),
-	// 	 url('../fonts/univers_condensed_bold.ttf') format('truetype'),
-	// 	 url('../fonts/univers_condensed_bold.svg#univers_condensedbold') format('svg');
-	// font-weight: normal;
-	// font-style: normal;
+	font-family: "SegoeUIRegular";
+	src: url("../fonts/SegoeUIRegular/SegoeUIRegular.eot");
+	src: url("../fonts/SegoeUIRegular/SegoeUIRegular.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/SegoeUIRegular/SegoeUIRegular.woff") format("woff"),
+	url("../fonts/SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+/* font-family: "SegoeUIBold"; */
+@font-face {
+	font-family: "SegoeUIBold";
+	src: url("../fonts/SegoeUIBold/SegoeUIBold.eot");
+	src: url("../fonts/SegoeUIBold/SegoeUIBold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/SegoeUIBold/SegoeUIBold.woff") format("woff"),
+	url("../fonts/SegoeUIBold/SegoeUIBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
 }
 
-// .ucb{font-family: 'ucb'}
+.bold{
+	font-family: "SegoeUIBold";
+}
+
+i, em{
+	font-family: "SegoeUIItalic";
+}
+
 
 
 .tdn{

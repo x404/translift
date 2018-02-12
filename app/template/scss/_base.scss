@@ -1,20 +1,15 @@
 /*** reset ***********/
-html,body,ul,ol,li,dl,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,a,img,label{margin:0;padding:0;border:0}
+html,body,ul,ol,li,dl,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,a,img,label, figure, figcaption{margin:0;padding:0;border:0}
 header, section, footer, aside, nav, article {display:block}
 ul{list-style:none}
 $color1:#000;
 $color2:#fff;
-
 $color3:#0563bf;
+$color4:#d5d5d5;
+$color5:#333;
 $color9:#ffc72a;
 
 
-
-$color4:#1a237e;
-$color5:#666;
-$color6:#ff5722;
-$color7:#80bbde;
-$color8:#292929;
 
 
 * {
@@ -90,9 +85,11 @@ input::-moz-focus-inner{
 
 
 /*** standart classes *****/
-p{}
+p{color: #333;}
+
 a{color:#020000}
 h1, .title{
+	color: $color3;
 	font-size:2.4rem;
 	@extend .bold;
 	font-weight: normal;
@@ -130,11 +127,45 @@ input::-moz-focus-inner{
 	font-weight: normal;
 }
 
+
+/* font-family: "SegoeUIItalic"; */
+@font-face {
+	font-family: "SegoeUIItalic";
+	src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot");
+	src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/SegoeUIItalic/SegoeUIItalic.woff") format("woff"),
+	url("../fonts/SegoeUIItalic/SegoeUIItalic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+/* font-family: "SegoeUILight"; */
+@font-face {
+	font-family: "SegoeUILight";
+	src: url("../fonts/SegoeUILight/SegoeUILight.eot");
+	src: url("../fonts/SegoeUILight/SegoeUILight.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/SegoeUILight/SegoeUILight.woff") format("woff"),
+	url("../fonts/SegoeUILight/SegoeUILight.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+/* font-family: "SegoeUISemiBold"; */
+@font-face {
+	font-family: "SegoeUISemiBold";
+	src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.eot");
+	src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/SegoeUISemiBold/SegoeUISemiBold.woff") format("woff"),
+	url("../fonts/SegoeUISemiBold/SegoeUISemiBold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+
 .bold{
 	font-family: "SegoeUIBold";
 }
 
-i, em{
+i, em, .italic{
 	font-family: "SegoeUIItalic";
 }
 
@@ -169,27 +200,15 @@ i, em{
 	font-size: 16px;
 	&:focus,
 	&:active{
-		border-color: $color5;
+		// border-color: $color5;
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3)
 	}
 }
 
 
-
-/* =header
----------------------------*/
-header{
+.flexbox{
+	display: flex;
 }
-
-/* =/header
----------------------------*/
-
-
-
-/* =navigation
----------------------------*/
-/* =/navigation
----------------------------*/
 
 
 .owl-carousel{
@@ -217,20 +236,195 @@ header{
 	}
 }
 
-/* =main
----------------------------*/
 
-.main{
-	aside{
+section{
+	h1{
+		text-align: center;
+	}
+}
+
+
+.share{
+	@include font-size(1.8);
+	// color: $color8;
+	font-family: "SegoeUIItalic";
+	padding-bottom: 3.8rem;
+	p{
+		padding-bottom: 2rem;
 	}
 }
 
 
 
-
-
-/* =footer
+/* =breadcrumbs
 ---------------------------*/
-footer{
-	background: #FFCC00;
+.breadcrumbs{
+	font-family: "SegoeUIItalic";	
+	margin-top: 5.5rem;
+	margin-bottom: 2.5rem;
+	text-transform: lowercase;
+	ul{
+		li{
+			display: inline-block;
+			span{
+				// color: $color5;
+			}
+			a{
+				color: $color1;
+				@extend .tdn;
+			}
+		}
+	}
+}
+/* =/breadcrumbs
+---------------------------*/
+
+
+/* =main
+---------------------------*/
+.line{
+	position: relative;
+	&:after{
+		@extend .before;
+		border-bottom: 1px solid $color4;
+		left: 50%;
+		$w: 40%;
+		width: $w;
+		margin-left: -$w/2;
+		bottom: 0;
+	}	
+}
+
+h1{
+	@extend .line;
+	font-weight: normal;
+	margin-bottom: 3rem;
+	padding-bottom: 1.2rem;
+	padding-top: 3rem;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+
+.text{
+	p{
+		margin: 1.6rem 0;
+	}
+	ul{
+		color: $color5;
+		li{
+			position: relative;
+			&:before{
+				content: "-";
+				display: inline-block;
+				padding-right: 4px;
+			}
+		}
+	}
+}
+
+
+.text-center{
+	text-align: center;
+}
+
+.more{
+	@extend .italic;
+	margin-top: 10px;
+	&__link{
+		border-bottom: 1px dashed rgba(0,0,0,0);
+		color: $color3;
+		text-decoration: none;
+		&:hover{
+			border-bottom: 1px dashed rgba(5,99,191,1);			
+		}
+	}
+}
+
+
+/* =listProducts
+---------------------------*/
+.listProducts{
+	margin-top: 2rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	&__item{
+		text-decoration: none;
+		// flex-basis: 20%;
+		figure{
+			display: block;
+			overflow: hidden;
+			width: 205px;
+			img{
+				@include transition-param(transform);
+				vertical-align: top;
+			}
+		}
+		figcaption{
+			// @include transition-param(background-color, color);
+			transition: .3s background-color, color ease-out;
+			display: flex;
+			align-items: center;
+			height: 4.6rem;
+			padding-left: .9rem;
+			background: #e6e6e6;
+			color: $color5;	
+			text-transform: uppercase;
+			position: relative;
+		}
+		&:hover{
+			img{
+				transform: scale(1.1);
+			}
+			figcaption{
+				background-color: $color3;
+				color: $color2;
+			}
+		}
+	}
+}
+/* =/listProducts
+---------------------------*/
+
+
+
+.gallery{
+	margin-top: 2rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	img{
+		vertical-align: top;
+	}
+	a{
+		display: block;
+		position: relative;
+		overflow: hidden;
+		opacity: .55;
+		@include transition-param;
+		&:after{
+			@extend .before;
+			@include transition-param;
+			background: url(../images/zoom.png) no-repeat center;
+			height: 59px;
+			left: 50%;
+			margin-left: -30px;
+			margin-top: -30px;
+			top: 50%;
+			width: 59px;
+			opacity: 0;
+		}
+		img{
+			@include transition-param(transform);
+		}
+		&:hover{
+			opacity: 1;
+			&:after{
+				opacity: 1;
+			}
+			img{
+				transform: scale(1.1);
+			}
+		}
+	}
 }

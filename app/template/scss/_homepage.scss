@@ -25,6 +25,9 @@
 			margin: 0 auto;
 			padding: 2rem;
 			width: 90%;
+			p{
+				color: inherit;
+			}
 		}
 
 		.title{
@@ -109,3 +112,10 @@
 }
 /* =slider
 ---------------------------*/
+
+
+.homepage{
+	.row{
+		margin-top: 15px;
+	}
+}

@@ -281,6 +281,39 @@
 		<div id="map"></div>
 	</section>
 	<!-- =/map -->
+
+
+
+	<!-- =feedback -->
+	<div class="feedback">
+		<div class="feedback__content text-center">
+			<p class="title">ОСТАЛИСЬ ВОПРОСЫ ?</p>
+		</div>
+		<form action="#" method="post" id="feedback-form" class="feedback__form form-policy">
+			<fieldset>
+				<div class="container">
+					<div class="row">
+						<label for="name" class="visually-hidden">ваше имя</label>
+						<input name="name" id="name" type="text" value="" class="form-control required" placeholder="ваше имя *">
+						<label for="tel" class="visually-hidden">ваш номер телефона</label>
+						<input name="tel" id="tel" type="tel" value="" class="form-control required" placeholder="ваш номер телефона *">
+						<label for="email" class="visually-hidden">ваш e-mail</label>
+						<input name="email" id="email" type="email" value="" class="form-control email" placeholder="ваш e-mail">
+					</div>
+					<div class="row">
+						<label for="msg" class="visually-hidden">текст вашего сообщения</label>
+						<textarea name="msg" id="msg" cols="30" rows="10" placeholder="текст вашего сообщения"></textarea>
+					</div>
+					<input type="submit" class="submit" value="Отправить">
+					<div class="policy">
+						<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access">
+						<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#.pdf" title="" target="_blank">Пользовательского соглашения</a></label>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<!-- =/feedback -->
 </div>
 
 

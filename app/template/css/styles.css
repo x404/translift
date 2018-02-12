@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container {
   margin-right: auto;
   margin-left: auto; }
@@ -206,12 +207,12 @@ input::-moz-focus-inner {
 .bold, h1, .title, .homecarousel .item .more, .steps .num {
   font-family: "SegoeUIBold"; }
 
-i, em, .italic, .more {
+i, em, .italic, .more, .feedback__form .row input.form-control, .feedback__form .submit, .policy {
   font-family: "SegoeUIItalic"; }
 
-.tdn, .breadcrumbs ul li a {
+.tdn, .breadcrumbs ul li a, .feedback .vcard .email, .policy a {
   text-decoration: none; }
-  .tdn:hover, .breadcrumbs ul li a:hover {
+  .tdn:hover, .breadcrumbs ul li a:hover, .feedback .vcard .email:hover, .policy a:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -391,6 +392,16 @@ h1 {
   .map #map {
     height: 500px; }
 
+/* =feedback
+---------------------------*/
+/* =/feedback
+---------------------------*/
+label.error {
+  display: none !important; }
+
+.form-control.error {
+  border-color: red !important; }
+
 /* =slider
 ---------------------------*/
 .homecarousel {
@@ -549,6 +560,201 @@ h1 {
 
 /* =steps
 ---------------------------*/
+.feedback {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 15px; }
+  .feedback .vcard .name {
+    display: none; }
+  .feedback .vcard .adr {
+    margin-top: 20px;
+    margin-bottom: 10px; }
+  .feedback .vcard .tel {
+    text-decoration: none;
+    margin-right: .5rem; }
+  .feedback .vcard .email {
+    margin-left: .5rem; }
+  .feedback .vcard p {
+    font-size: 14px;
+    line-height: 3; }
+  .feedback__content {
+    padding: 25px 0 10px; }
+
+.feedback .container {
+  max-width: 1070px;
+  padding-bottom: 15px; }
+
+.feedback__form {
+  background: #f2f2f2;
+  margin: 1.5rem auto 0;
+  padding: .6rem 1rem;
+  position: relative; }
+  .feedback__form .row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: relative; }
+    .feedback__form .row:first-child {
+      margin-top: 0; }
+    .feedback__form .row input.form-control,
+    .feedback__form .row textarea {
+      color: #fff;
+      border: 1px solid #0563bf;
+      font-size: 15px;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+      transition: all .3s; }
+      .feedback__form .row input.form-control:disabled,
+      .feedback__form .row textarea:disabled {
+        cursor: default; }
+        .feedback__form .row input.form-control:disabled::-webkit-input-placeholder,
+        .feedback__form .row textarea:disabled::-webkit-input-placeholder {
+          color: #ccc; }
+        .feedback__form .row input.form-control:disabled::-moz-placeholder,
+        .feedback__form .row textarea:disabled::-moz-placeholder {
+          color: #ccc; }
+        .feedback__form .row input.form-control:disabled:-ms-input-placeholder,
+        .feedback__form .row textarea:disabled:-ms-input-placeholder {
+          color: #ccc; }
+        .feedback__form .row input.form-control:disabled:focus::-webkit-input-placeholder,
+        .feedback__form .row textarea:disabled:focus::-webkit-input-placeholder {
+          transition: line-height 0.5s ease; }
+        .feedback__form .row input.form-control:disabled:focus::-moz-placeholder,
+        .feedback__form .row textarea:disabled:focus::-moz-placeholder {
+          transition: line-height 0.5s ease; }
+        .feedback__form .row input.form-control:disabled:focus:-ms-input-placeholder,
+        .feedback__form .row textarea:disabled:focus:-ms-input-placeholder {
+          transition: line-height 0.5s ease; }
+    .feedback__form .row input.form-control {
+      border-radius: 3px;
+      height: 36px;
+      padding-bottom: 4px;
+      width: 352px;
+      text-align: center; }
+      .feedback__form .row input.form-control::-webkit-input-placeholder {
+        color: #b2b2b2; }
+      .feedback__form .row input.form-control::-moz-placeholder {
+        color: #b2b2b2; }
+      .feedback__form .row input.form-control:-ms-input-placeholder {
+        color: #b2b2b2; }
+      .feedback__form .row input.form-control:focus::-webkit-input-placeholder {
+        transition: line-height 0.5s ease; }
+      .feedback__form .row input.form-control:focus::-moz-placeholder {
+        transition: line-height 0.5s ease; }
+      .feedback__form .row input.form-control:focus:-ms-input-placeholder {
+        transition: line-height 0.5s ease; }
+    .feedback__form .row textarea {
+      border-radius: 3px;
+      flex: 1;
+      overflow: hidden;
+      height: 8.5rem; }
+      .feedback__form .row textarea::-webkit-input-placeholder {
+        color: #b2b2b2; }
+      .feedback__form .row textarea::-moz-placeholder {
+        color: #b2b2b2; }
+      .feedback__form .row textarea:-ms-input-placeholder {
+        color: #b2b2b2; }
+      .feedback__form .row textarea:focus::-webkit-input-placeholder {
+        transition: line-height 0.5s ease; }
+      .feedback__form .row textarea:focus::-moz-placeholder {
+        transition: line-height 0.5s ease; }
+      .feedback__form .row textarea:focus:-ms-input-placeholder {
+        transition: line-height 0.5s ease; }
+    .feedback__form .row .error {
+      border: 1px solid red !important; }
+  .feedback__form .submit {
+    background-image: -webkit-linear-gradient(top, #8fc2d7 0%, #287fa5 100%);
+    background-image: -o-linear-gradient(top, #8fc2d7 0%, #287fa5 100%);
+    background-image: linear-gradient(to bottom, #8fc2d7 0%, #287fa5 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF8FC2D7', endColorstr='#FF287FA5', GradientType=0);
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    height: 36px;
+    margin: 20px auto;
+    width: 176px;
+    text-transform: lowercase;
+    border: none;
+    cursor: pointer; }
+    .feedback__form .submit:hover {
+      background-image: -webkit-linear-gradient(top, #287fa5 0%, #8fc2d7 100%);
+      background-image: -o-linear-gradient(top, #287fa5 0%, #8fc2d7 100%);
+      background-image: linear-gradient(to bottom, #287fa5 0%, #8fc2d7 100%);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF287FA5', endColorstr='#FF8FC2D7', GradientType=0); }
+  .feedback__form .policy {
+    margin-top: 20px; }
+  .feedback__form #msg {
+    padding-right: 80px; }
+  .feedback__form .sending,
+  .feedback__form .thank {
+    height: 238px;
+    padding-top: 105px; }
+
+.policy {
+  color: #0563bf; }
+  .policy a {
+    color: #d5d5d5; }
+
+.user-access + label {
+  cursor: pointer;
+  font-size: 14px; }
+
+.user-access:not(checked) {
+  position: absolute;
+  opacity: 0; }
+
+.user-access:not(checked) + label {
+  color: #808080;
+  display: block;
+  position: relative;
+  /* будем позиционировать псевдочекбокс относительно label */
+  padding: 3px 0 0 40px;
+  /* оставляем слева от label место под псевдочекбокс */ }
+  .user-access:not(checked) + label a {
+    color: #0563bf; }
+
+/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+.user-access:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 28px;
+  height: 28px;
+  background-color: #fff;
+  border: 1px solid #0563bf;
+  border-radius: 3px;
+  text-align: center; }
+
+/* Меняем фон чекбокса, когда он включен. */
+/* Сдвигаем переключатель чекбокса, когда он включен. */
+.user-access:checked + label:after {
+  content: '*';
+  position: absolute;
+  top: -6px;
+  left: 6px;
+  width: 22px;
+  height: 22px;
+  font-size: 36px; }
+
+.sending {
+  text-align: center;
+  font-size: 17px;
+  height: 207px;
+  padding-top: 80px; }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0); }
+
 /* =mobile-menu
 ---------------------------*/
 .navbar-toggle,

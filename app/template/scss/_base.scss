@@ -13,6 +13,7 @@ $color8:#004d91;
 $color9:#ffc72a;
 $color10:#808080;
 $color11:#d5d5d5;
+$color12:#ececec;
 
 
 
@@ -276,10 +277,11 @@ section{
 		align-items: center;
 		display: flex;
 		.logo{
-			color: $color10;
-			flex-grow: 1;
-			display: flex;
 			align-items: center;
+			color: $color10;
+			display: flex;
+			flex-grow: 1;
+			margin-left: 4.8rem;
 			a{
 				margin-right: 2.7rem;
 			}
@@ -337,6 +339,7 @@ section{
 				color: $color3;
 				margin-left: 1.4rem;
 				text-decoration: none;
+				@include transition-param(border-bottom)
 				&:hover{
 					border-bottom: 1px dashed;
 				}
@@ -622,10 +625,132 @@ h1{
 
 
 
-/* =feedback
+/* =footer
 ---------------------------*/
+.footer{
+	.container{
+		padding: 0 14px;
+	}
 
-/* =/feedback
+	&__top{
+		background: $color12;
+	}
+
+	.cattitle{
+		color: $color8;
+		@extend .bold;
+		text-transform: uppercase;
+		margin: 2.5rem 0 1.8rem;
+	}
+
+	.translift{
+		@extend .italic;
+		background: #004d91;
+		color: $color2;
+		display: flex;
+		flex-basis: 20%;
+		flex-direction: column;
+		flex-shrink: 0;
+		justify-content: space-around;
+		min-height: 300px;
+		padding: 2.3rem 0;
+		text-align: center;
+		p{
+			color: inherit;
+		}
+		a{
+			color: $color2;
+			text-decoration: none;
+			&.tel{
+				font-size: 18px;
+				display: inline-block;
+				margin-bottom: .5rem;
+			}
+			&:not(.tel){
+				@include transition-param(border);
+				border-bottom: 1px dashed rgba(0,0,0,0);
+				&:hover{
+					border-bottom: 1px dashed $color2;
+				}
+			}
+		}
+		.logo{
+			display: block;
+		}
+		.contacts{
+
+		}
+	}
+
+	.info{
+		flex-basis: 30%;
+		flex-shrink: 0;
+		padding-left: 46px;
+		padding-right: 70px;
+		a{
+			@extend .tdn;
+			display: inline-block;
+			margin-bottom: 2rem;
+			@extend .italic;
+			font-size: 1.3rem;
+			&:hover{
+				color: $color8;
+			}
+		}
+	}
+
+	.objects{
+		flex-basis: 20%;
+		flex-shrink: 0;
+		.flexbox{
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width: 220px;
+			a{
+				margin-bottom: 1.2rem;
+				opacity: .55;
+				@include transition-param;
+				img{
+					vertical-align: top;
+				}
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}		
+	}
+
+	.qsearch{
+		@extend .italic;
+		font-size: 1.3rem;
+		flex-grow: 1;
+		padding-left: 60px;
+		padding-right: 45px;
+		
+		form{
+			margin-bottom: 2rem;
+			.form-control{
+				font-size: 12px;
+			}
+		}
+		p{
+			line-height: 1.7;
+			margin-bottom: 2rem;
+		}
+
+		a{
+			@include transition-param(border);
+			border-bottom: 1px dashed rgba(0,0,0,0);
+			color: $color3;
+			display: inline-block;
+			text-decoration: none;
+			&:hover{
+				border-bottom: 1px dashed;
+			}
+		}
+	}
+}
+/* =/footer
 ---------------------------*/
 
 

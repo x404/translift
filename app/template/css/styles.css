@@ -208,15 +208,15 @@ input::-moz-focus-inner {
   font-family: 'CenturyGothic';
   src: url("../fonts/CenturyGothic.woff2") format("woff2"), url("../fonts/CenturyGothic.woff") format("woff"), url("../fonts/CenturyGothic.ttf") format("truetype"); }
 
-.bold, h1, .title, .homecarousel .item .more, .steps .num, .news__item {
+.bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item {
   font-family: "SegoeUIBold"; }
 
-i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .feedback__form .row input.form-control, .feedback__form .submit, .policy {
+i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer .translift, .footer .info a, .footer .qsearch, .feedback__form .row input.form-control, .feedback__form .submit, .policy {
   font-family: "SegoeUIItalic"; }
 
-.tdn, .breadcrumbs ul li a, .feedback .vcard .email, .policy a {
+.tdn, .breadcrumbs ul li a, .footer .info a, .feedback .vcard .email, .policy a {
   text-decoration: none; }
-  .tdn:hover, .breadcrumbs ul li a:hover, .feedback .vcard .email:hover, .policy a:hover {
+  .tdn:hover, .breadcrumbs ul li a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -274,10 +274,11 @@ section h1 {
     align-items: center;
     display: flex; }
     .header__top .logo {
+      align-items: center;
       color: #808080;
-      flex-grow: 1;
       display: flex;
-      align-items: center; }
+      flex-grow: 1;
+      margin-left: 4.8rem; }
       .header__top .logo a {
         margin-right: 2.7rem; }
     .header__top .qsearch form {
@@ -335,7 +336,9 @@ section h1 {
         border-bottom: 1px dashed transparent;
         color: #0563bf;
         margin-left: 1.4rem;
-        text-decoration: none; }
+        text-decoration: none;
+        -webkit-transition: border-bottom 0.2s ease-out;
+        transition: border-bottom 0.2s ease-out; }
         .header__bottom .contacts a:not(.tel):hover {
           border-bottom: 1px dashed; }
 
@@ -530,9 +533,100 @@ h1 {
   .map #map {
     height: 500px; }
 
-/* =feedback
+/* =footer
 ---------------------------*/
-/* =/feedback
+.footer .container {
+  padding: 0 14px; }
+
+.footer__top {
+  background: #ececec; }
+
+.footer .cattitle {
+  color: #004d91;
+  text-transform: uppercase;
+  margin: 2.5rem 0 1.8rem; }
+
+.footer .translift {
+  background: #004d91;
+  color: #fff;
+  display: flex;
+  flex-basis: 20%;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: space-around;
+  min-height: 300px;
+  padding: 2.3rem 0;
+  text-align: center; }
+  .footer .translift p {
+    color: inherit; }
+  .footer .translift a {
+    color: #fff;
+    text-decoration: none; }
+    .footer .translift a.tel {
+      font-size: 18px;
+      display: inline-block;
+      margin-bottom: .5rem; }
+    .footer .translift a:not(.tel) {
+      -webkit-transition: border 0.2s ease-out;
+      transition: border 0.2s ease-out;
+      border-bottom: 1px dashed transparent; }
+      .footer .translift a:not(.tel):hover {
+        border-bottom: 1px dashed #fff; }
+  .footer .translift .logo {
+    display: block; }
+
+.footer .info {
+  flex-basis: 30%;
+  flex-shrink: 0;
+  padding-left: 46px;
+  padding-right: 70px; }
+  .footer .info a {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-size: 1.3rem; }
+    .footer .info a:hover {
+      color: #004d91; }
+
+.footer .objects {
+  flex-basis: 20%;
+  flex-shrink: 0; }
+  .footer .objects .flexbox {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 220px; }
+    .footer .objects .flexbox a {
+      margin-bottom: 1.2rem;
+      opacity: .55;
+      -webkit-transition: opacity 0.2s ease-out;
+      transition: opacity 0.2s ease-out; }
+      .footer .objects .flexbox a img {
+        vertical-align: top; }
+      .footer .objects .flexbox a:hover {
+        opacity: 1; }
+
+.footer .qsearch {
+  font-size: 1.3rem;
+  flex-grow: 1;
+  padding-left: 60px;
+  padding-right: 45px; }
+  .footer .qsearch form {
+    margin-bottom: 2rem; }
+    .footer .qsearch form .form-control {
+      font-size: 12px; }
+  .footer .qsearch p {
+    line-height: 1.7;
+    margin-bottom: 2rem; }
+  .footer .qsearch a {
+    -webkit-transition: border 0.2s ease-out;
+    transition: border 0.2s ease-out;
+    border-bottom: 1px dashed transparent;
+    color: #0563bf;
+    display: inline-block;
+    text-decoration: none; }
+    .footer .qsearch a:hover {
+      border-bottom: 1px dashed; }
+
+/* =/footer
 ---------------------------*/
 label.error {
   display: none !important; }

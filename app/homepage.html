@@ -272,6 +272,15 @@
 		</section>
 		<!-- =/steps -->
 	</div>
+
+	<!-- =map -->
+	<section class="map">
+		<header>
+			<h1>Как нас найти</h1>
+		</header>
+		<div id="map"></div>
+	</section>
+	<!-- =/map -->
 </div>
 
 
@@ -297,5 +306,40 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
 <script src="/template/js/engine.js"></script>
+
+<script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>
+<script>
+var map;
+var myCollection;
+ymaps.ready(function () {
+	map = new ymaps.Map('map', {
+		center: [55.780588, 37.602391],
+		zoom: 17
+	});
+	myCollection = new ymaps.GeoObjectCollection(null, {
+		preset: 'islands#redDotIcon'
+	});
+	myCollection.add(new ymaps.Placemark(
+		[55.780588, 37.602391],
+		{
+			hintContent: 'Восточный офис',
+			balloonContent: ''
+		}
+	));
+	map.behaviors.disable('scrollZoom'); 
+
+	map.geoObjects.add(myCollection);
+	map.events.add('click', function onMapClick(e) {
+		if(map.behaviors.isEnabled('scrollZoom')) {
+			map.events.remove('click', onMapClick);
+		} else {
+			map.behaviors.enable(['scrollZoom']);
+		}
+	});
+});
+function go_to(lat,lon){
+	map.setCenter([lat, lon], 16);
+}
+</script>
 </body>
 </html>

@@ -386,6 +386,11 @@ h1 {
       .gallery a:hover img {
         transform: scale(1.1); }
 
+.map {
+  margin-top: 45px; }
+  .map #map {
+    height: 500px; }
+
 /* =slider
 ---------------------------*/
 .homecarousel {
@@ -534,7 +539,7 @@ h1 {
   .steps .num p {
     position: absolute;
     top: -30px;
-    left: -35px;
+    left: -30px;
     font-size: 1.4rem;
     white-space: nowrap;
     font-family: "SegoeUIRegular"; }

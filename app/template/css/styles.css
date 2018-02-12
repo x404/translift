@@ -204,7 +204,7 @@ input::-moz-focus-inner {
   font-style: normal;
   font-weight: normal; }
 
-.bold, h1, .title, .homecarousel .item .more, .steps .num {
+.bold, h1, .title, .homecarousel .item .more, .steps .num, .news__item {
   font-family: "SegoeUIBold"; }
 
 i, em, .italic, .more, .feedback__form .row input.form-control, .feedback__form .submit, .policy {
@@ -220,7 +220,7 @@ i, em, .italic, .more, .feedback__form .row input.form-control, .feedback__form 
   .tdu:hover {
     text-decoration: none; }
 
-.before, .line:after, h1:after, .gallery a:after, .steps__scheme:after {
+.before, .line:after, h1:after, .gallery a:after, .steps__scheme:after, .news__title:after {
   content: "";
   display: block;
   position: absolute; }
@@ -672,14 +672,14 @@ label.error {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF8FC2D7', endColorstr='#FF287FA5', GradientType=0);
     border-radius: 3px;
+    border: none;
     color: #fff;
+    cursor: pointer;
     display: block;
     height: 36px;
     margin: 20px auto;
-    width: 176px;
     text-transform: lowercase;
-    border: none;
-    cursor: pointer; }
+    width: 176px; }
     .feedback__form .submit:hover {
       background-image: -webkit-linear-gradient(top, #287fa5 0%, #8fc2d7 100%);
       background-image: -o-linear-gradient(top, #287fa5 0%, #8fc2d7 100%);
@@ -754,6 +754,44 @@ label.error {
   height: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0); }
+
+.news__list {
+  justify-content: space-between; }
+
+.news__item {
+  height: 308px;
+  color: #004d91;
+  border: 1px solid;
+  width: 350px;
+  text-align: center;
+  text-transform: uppercase;
+  filter: grayscale(1);
+  -webkit-transition: filter 0.2s ease-out;
+  transition: filter 0.2s ease-out;
+  display: flex;
+  align-items: center; }
+  .news__item a {
+    display: block;
+    text-decoration: none; }
+  .news__item:hover {
+    filter: grayscale(0); }
+
+.news__title {
+  color: #004d91;
+  font-size: 2.2rem;
+  padding-bottom: 1.5rem;
+  margin: 0 10px 1.5rem;
+  position: relative; }
+  .news__title:after {
+    background: linear-gradient(to right, #ffffff 0%, #0563bf 50%, #fff 100%);
+    height: 1px;
+    bottom: 0;
+    width: 100%;
+    z-index: -1; }
+
+.news__desc {
+  color: #004d91;
+  padding: 0 2.8rem; }
 
 /* =mobile-menu
 ---------------------------*/

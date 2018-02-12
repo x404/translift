@@ -88,19 +88,19 @@
 		}
 
 		.submit{
-			$colorStart : #8fc2d7;
 			$colorEnd : #287fa5 ;
+			$colorStart : #8fc2d7;
+			@extend .italic;
 			@include gradient-vertical($colorStart, $colorEnd);
 			border-radius: 3px;
-			@extend .italic;
+			border: none;
 			color: $color2;
+			cursor: pointer;
 			display: block;
 			height: 36px;
 			margin: 20px auto;
-			width: 176px;
 			text-transform: lowercase;
-			border: none;
-			cursor: pointer;
+			width: 176px;
 			&:hover{
 				@include gradient-vertical($colorEnd, $colorStart);		
 			}

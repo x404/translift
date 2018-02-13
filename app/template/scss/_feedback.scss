@@ -1,6 +1,7 @@
 .feedback{
 	background-color: rgba(255, 255, 255, .8);
 	font-size: 15px;
+	margin-bottom: 1rem;
 	.vcard{
 		.name{
 			display: none;
@@ -38,7 +39,7 @@
 	&__form{
 		background: $color6;
 		margin: 1.5rem auto 0;
-		padding: .6rem 1rem;
+		padding: 1rem;
 		position: relative;
 		.row{
 			@include flexbox;
@@ -68,7 +69,7 @@
 				@extend .italic;
 				@include placeholder($color7);
 				border-radius: 3px;
-				height: 36px;
+				height: 38px;
 				padding-bottom: 4px;
 				width: 352px;
 				text-align: center;

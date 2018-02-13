@@ -14,6 +14,8 @@ $color9:#ffc72a;
 $color10:#808080;
 $color11:#d5d5d5;
 $color12:#ececec;
+$color13:#c6c6c6;
+$color14:#4c4c4c;
 
 
 
@@ -216,6 +218,10 @@ i, em, .italic{
 		// border-color: $color5;
 		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3)
 	}
+}
+
+.submit{
+	cursor: pointer;
 }
 
 
@@ -484,9 +490,9 @@ nav{
 h1{
 	@extend .line;
 	font-weight: normal;
-	margin-bottom: 3rem;
+	margin-bottom: 1.5rem;
 	padding-bottom: 1.2rem;
-	padding-top: 3rem;
+	padding-top: 2rem;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -495,12 +501,13 @@ h1{
 
 .text{
 	p{
-		margin: 1.6rem 0;
+		margin: 2rem 0;
 	}
 	ul{
 		color: $color5;
 		li{
 			position: relative;
+			margin: .3rem 0;
 			&:before{
 				content: "-";
 				display: inline-block;
@@ -617,7 +624,7 @@ h1{
 
 
 .map{
-	margin-top: 45px;
+	margin-top: 60px;
 	#map{
 		height: 500px;
 	}
@@ -628,6 +635,7 @@ h1{
 /* =footer
 ---------------------------*/
 .footer{
+	padding-top: 4rem;
 	.container{
 		padding: 0 14px;
 	}
@@ -636,11 +644,24 @@ h1{
 		background: $color12;
 	}
 
+	&__bottom{
+		padding: 0.6rem 0 1.2rem;
+		@extend .italic;
+		color: $color14;
+		a{
+			@extend .tdn;
+			color: $color3;
+		}
+		.flexbox{
+			justify-content: space-between;
+		}
+	}
+
 	.cattitle{
 		color: $color8;
 		@extend .bold;
 		text-transform: uppercase;
-		margin: 2.5rem 0 1.8rem;
+		margin: 2.5rem 0 1.4rem;
 	}
 
 	.translift{
@@ -653,7 +674,7 @@ h1{
 		flex-shrink: 0;
 		justify-content: space-around;
 		min-height: 300px;
-		padding: 2.3rem 0;
+		padding: 1rem 0;
 		text-align: center;
 		p{
 			color: inherit;
@@ -677,9 +698,6 @@ h1{
 		.logo{
 			display: block;
 		}
-		.contacts{
-
-		}
 	}
 
 	.info{
@@ -688,11 +706,12 @@ h1{
 		padding-left: 46px;
 		padding-right: 70px;
 		a{
+			@extend .italic;
 			@extend .tdn;
 			display: inline-block;
-			margin-bottom: 2rem;
-			@extend .italic;
 			font-size: 1.3rem;
+			line-height: 1.5;
+			margin-bottom: 2rem;
 			&:hover{
 				color: $color8;
 			}
@@ -729,8 +748,32 @@ h1{
 		
 		form{
 			margin-bottom: 2rem;
+			input{
+				border: none;
+				background: none;
+				height: 34px;
+				margin-top: 0;
+			}
 			.form-control{
 				font-size: 12px;
+				border-left: 1px solid $color13;
+				border-top: 1px solid $color13;
+				border-bottom: 1px solid $color13;
+				padding-left: 13px;
+				width: 188px;
+			}
+			.submit{
+				@include sprite($icon-search-icon2);
+				border-right: 1px solid $color13;
+				border-top: 1px solid $color13;
+				border-bottom: 1px solid $color13;
+				height: 34px;
+				width: 34px;
+				padding: 0;
+				filter: grayscale(1);
+				&:hover{
+					filter: grayscale(0);					
+				}
 			}
 		}
 		p{
@@ -748,6 +791,48 @@ h1{
 				border-bottom: 1px dashed;
 			}
 		}
+	}
+
+	.social{
+		align-items: flex-end;
+		justify-content: center;
+		flex-basis: 20%;	
+		a{
+			align-items: center;
+			background: #c7c7c7;
+			border-radius: 50%;
+			display: flex;
+			height: 25px;
+			justify-content: center;
+			margin: 0 6px;
+			position: relative;
+			text-align: center;
+			width: 25px;
+			@include transition-param(background);
+			img{
+				vertical-align: top;
+				@include transition-param(filter);
+			}
+			&:after{
+				@extend .before;
+				border-left: 1px dotted #5e748e;
+				height: 11px;
+				width: 1px;
+				z-index: 2;
+				bottom: -12px;
+				left: 50%;
+			}
+
+			&:hover{
+				background: $color3;
+				img{
+					filter: brightness(400%)
+				}
+			}
+		}
+	}
+	.kreotif{
+		text-align: right;
 	}
 }
 /* =/footer

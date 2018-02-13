@@ -1,6 +1,7 @@
 .news{
 	&__list{
 		justify-content: space-between;
+		padding-top: 1rem;
 	}
 	&__item{
 		@extend .bold;
@@ -27,13 +28,13 @@
 		color: $color8;
 		font-size: 2.2rem;
 		padding-bottom: 1.5rem;
-		margin: 0 10px 1.5rem;
+		margin: 0 10px 1.3rem;
 		position: relative;
 		&:after{
 			@extend .before;
 			background: linear-gradient(to right, #ffffff 0%, #0563bf 50%, #fff 100%);
 			height: 1px;
-			bottom: 0;
+			bottom: 3px;
 			width: 100%;
 			z-index: -1;
 		}

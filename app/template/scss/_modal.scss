@@ -1,0 +1,260 @@
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and stuff
+
+
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+  .inner{
+  	filter: blur(6px)
+  }
+}
+
+// Container that the modal scrolls within
+.modal {
+  padding-right: 0 !important;
+  position: fixed;
+  top: 16%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  // display: none;
+  overflow: hidden;
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+  // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
+  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
+  // See also https://github.com/twbs/bootstrap/issues/17695
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+  	// transition: transform .3s ease-out,-webkit-transform .3s ease-out;
+    // transform: translate(0, -25%);
+  }
+  &.show .modal-dialog { transform: translate(0, 0); }
+}
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+	background-color: #f2f2f2;
+	position: relative;
+	width: auto;
+	top: 0;
+	margin-top: 20px;
+	padding-top: 1.3rem;
+	padding-bottom: 1.5rem;
+	.container{
+		position: relative;
+	}
+
+	.close-modal{
+		top: -55px;
+	}
+
+	.title{
+		@extend .bold;
+		font-size: 2.4rem;
+		padding-bottom: .8rem;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	.thank{
+		// @extend .bi;
+		text-transform: uppercase;
+		padding: 110px 0 120px;
+		font-size: 20px;
+	}
+}
+
+// Actual modal
+.modal-content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1071;
+	background-color: #000;
+
+	// Fade for backdrop
+	&.fade { opacity: 0; }
+	&.show { opacity: .5 !important }
+}
+
+
+
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+}
+
+
+// Measure scrollbar width for padding body during modal show/hide
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+
+.close-modal{
+	@extend .italic;
+	background-color: #d92525;
+	border-radius: 16px;
+	border: none;
+	cursor: pointer;
+	height: 32px;
+	position: absolute;
+	left: 50%;
+	margin-left: -23px;
+	text-align: center;
+	width: 46px;
+	z-index: 99;
+	img{
+		margin-top: 2px;
+		vertical-align: top;
+		transition: transform .2s;
+	}
+	&:hover{
+		span{
+			text-decoration: underline;
+		}
+		img{
+			transform: rotate(90deg);
+		}
+	}
+	span{
+		color: $color4;
+	}
+}
+
+form{
+	.thank{
+		color: $color3;
+		background-color: $color2;
+		font-size: 18px;
+		padding: 90px 0 100px;
+	}
+}
+
+#callback{
+	form{
+		// background-color: $color2;
+		@extend .italic;
+		width: 90%;
+		margin-left: auto;
+		margin-right: auto;
+		.form-control{
+			// @extend .bi;
+			background-color: $color2;
+			font-size: 17px;	
+			color: #808080;
+			flex-grow: 1;
+			margin-top: 1.1rem;
+			text-align: center;
+			width: 100%;
+			height: 38px;
+			@include placeholder(#808080);
+		}
+
+		.policy{
+			margin-top: 1.5rem;
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+
+#qorder,
+#addreview{
+	.modal-dialog{
+		padding-bottom: 0;
+		.close-modal{
+			top: -17px;
+		}
+	}
+	.submit{
+		margin-top: 24px;
+	}
+	.feedback__form{
+		// background-color: $color15;
+		max-width: 100%;
+		padding-top: 15px;
+		padding-bottom: 25px;
+		.file-upload{
+			background: url(../images/upload.png) no-repeat left -54px;
+			&:hover{
+				background-position: left -216px;
+			}
+		}
+	}
+}
+
+
+#addreview{
+	.form-policy{
+		margin-top: 40px;
+	}
+
+	.thank{
+		padding: 180px 0 182px;
+	}
+}
+
+
+#about{
+	.modal__content{
+		.title{
+			padding-bottom: .5rem;
+			text-transform: uppercase;
+		}
+
+		@extend .italic;
+		background-color: $color2;
+		border: 1px solid $color4;
+		color: $color3;
+		line-height: 1.7;
+		padding: 2rem 1.5rem;
+	}
+}
+
+.submit:disabled{
+	cursor: default !important;
+	background-color: #ccc !important;
+}
+
+
+
+#qorder{
+	padding-right: 0 !important;
+	.top{
+		p:not(.title){
+			color: #363636;			
+		}
+	}
+
+	.form-policy{
+		margin-top: 14px;
+	}
+}

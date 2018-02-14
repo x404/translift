@@ -49,7 +49,7 @@
 			<div class="header__bottom">
 				<div class="contacts">
 					<a href="tel:+74952595109" title="" class="tel">+7 (495) 259-51-09</a>
-					<a href="#" title="" class="">хотите связаться?</a>
+					<a href="#" title="" data-toggle="modal" data-target="#callback">хотите связаться?</a>
 				</div>
 				<div class="header__nav">
 					<!-- =nav -->
@@ -319,7 +319,7 @@
 						<label for="msg" class="visually-hidden">текст вашего сообщения</label>
 						<textarea name="msg" id="msg" cols="30" rows="10" placeholder="текст вашего сообщения"></textarea>
 					</div>
-					<input type="submit" class="submit" value="Отправить">
+					<input type="submit" class="submit btn" value="Отправить">
 					<div class="policy">
 						<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access">
 						<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#.pdf" title="" target="_blank">Пользовательского соглашения</a></label>
@@ -435,6 +435,37 @@
 	</div>
 </footer>
 <!-- =/footer -->
+
+
+
+<!-- =modal callback -->
+<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="container">
+			<div class="modal__body">
+				<p class="title">ХОТИТЕ ЧТОБЫ ВАМ ПЕРЕЗВОНИЛИ ?</p>
+				<form action="#" method="post" class="form-policy" id="callback-form">
+					<fieldset>
+						<label for="cbname" class="visually-hidden">как вас зовут</label>
+						<input type="text" id="cbname" name="name" class="form-control required" value="" placeholder="ваше имя" tabindex="0" autofocus />
+
+						<label for="cbtel" class="visually-hidden">телефон</label>
+						<input type="tel" id="cbtel" name="tel" class="form-control required" value="" placeholder="телефон" tabindex="2" />
+
+						<input type="submit" class="submit btn" tabindex="2" value="перезвонить мне" />
+						<div class="policy">
+							<input type="checkbox" id="cbcheckbox" value="" name="checkbox" checked="checked" class="user-access">
+							<label for="cbcheckbox">Я Согласен на обработку персональных данных и принимаю условия <a href="#.pdf" title="" target="_blank">Пользовательского соглашения</a></label>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<button type="button" data-dismiss="modal" class="close-modal visually-hidden" aria-label="Закрыть"></button>
+		</div>
+	</div>
+</div>
+<!-- =/modal callback -->
+
 
 
 

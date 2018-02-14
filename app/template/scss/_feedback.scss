@@ -1,3 +1,22 @@
+.submit{
+	$colorEnd : #287fa5 ;
+	$colorStart : #8fc2d7;
+	@extend .italic;
+	@include gradient-vertical($colorStart, $colorEnd);
+	border-radius: 3px;
+	border: none;
+	color: $color2;
+	cursor: pointer;
+	display: block;
+	height: 36px;
+	margin: 20px auto;
+	text-transform: lowercase;
+	width: 176px;
+	&:hover{
+		@include gradient-vertical($colorEnd, $colorStart);		
+	}
+}
+		
 .feedback{
 	background-color: rgba(255, 255, 255, .8);
 	font-size: 15px;
@@ -85,25 +104,6 @@
 
 			.error{
 				border: 1px solid red !important
-			}
-		}
-
-		.submit{
-			$colorEnd : #287fa5 ;
-			$colorStart : #8fc2d7;
-			@extend .italic;
-			@include gradient-vertical($colorStart, $colorEnd);
-			border-radius: 3px;
-			border: none;
-			color: $color2;
-			cursor: pointer;
-			display: block;
-			height: 36px;
-			margin: 20px auto;
-			text-transform: lowercase;
-			width: 176px;
-			&:hover{
-				@include gradient-vertical($colorEnd, $colorStart);		
 			}
 		}
 

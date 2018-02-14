@@ -830,7 +830,7 @@ h3 {
   font-family: 'CenturyGothic';
   src: url("../fonts/CenturyGothic.woff2") format("woff2"), url("../fonts/CenturyGothic.woff") format("woff"), url("../fonts/CenturyGothic.ttf") format("truetype"); }
 
-.bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, .modal-dialog .title {
+.bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, main strong, .modal-dialog .title {
   font-family: "SegoeUIBold"; }
 
 i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .close-modal, #callback form {
@@ -1097,35 +1097,37 @@ h1 {
 
 /* =listProducts
 ---------------------------*/
-.listProducts {
+.gallery {
   margin-top: 2rem;
   flex-wrap: wrap;
   justify-content: space-between; }
-  .listProducts__item {
+  .gallery figure {
+    display: block;
+    overflow: hidden;
+    width: 205px; }
+    .gallery figure img {
+      -webkit-transition: transform 0.2s ease-out;
+      transition: transform 0.2s ease-out;
+      vertical-align: top; }
+  .gallery figcaption {
+    transition: .3s background-color, color ease-out;
+    display: flex;
+    align-items: center;
+    height: 4.6rem;
+    padding-left: .9rem;
+    background: #e6e6e6;
+    color: #333;
+    text-transform: uppercase;
+    position: relative; }
+  .gallery__item {
     text-decoration: none; }
-    .listProducts__item figure {
-      display: block;
-      overflow: hidden;
-      width: 205px; }
-      .listProducts__item figure img {
-        -webkit-transition: transform 0.2s ease-out;
-        transition: transform 0.2s ease-out;
-        vertical-align: top; }
-    .listProducts__item figcaption {
-      transition: .3s background-color, color ease-out;
-      display: flex;
-      align-items: center;
-      height: 4.6rem;
-      padding-left: .9rem;
-      background: #e6e6e6;
-      color: #333;
-      text-transform: uppercase;
-      position: relative; }
-    .listProducts__item:hover img {
-      transform: scale(1.1); }
-    .listProducts__item:hover figcaption {
-      background-color: #0563bf;
-      color: #fff; }
+    .gallery__item:hover {
+      text-decoration: none; }
+      .gallery__item:hover img {
+        transform: scale(1.1); }
+      .gallery__item:hover figcaption {
+        background-color: #0563bf;
+        color: #fff; }
 
 /* =/listProducts
 ---------------------------*/
@@ -1172,8 +1174,6 @@ h1 {
 ---------------------------*/
 .footer {
   padding-top: 4rem; }
-  .footer .container {
-    padding: 0 14px; }
   .footer__top {
     background: #ececec; }
   .footer__bottom {
@@ -1764,6 +1764,26 @@ main {
         margin-right: 5px; }
   main p {
     margin: 20px 0; }
+  main a {
+    color: #0563bf;
+    text-decoration: none; }
+    main a:hover {
+      text-decoration: underline; }
+  main h2 {
+    font-family: "SegoeUIBold";
+    font-size: 18px;
+    font-weight: normal; }
+  main h3 {
+    font-family: "SegoeUIBold";
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 0; }
+  main h4 {
+    font-family: "SegoeUIBold";
+    font-size: 13px;
+    font-weight: normal; }
+  main .gallery {
+    margin: 4rem 0; }
 
 /* =breadcrumbs
 ---------------------------*/
@@ -1776,7 +1796,7 @@ main {
     color: #b2b2b2; }
     .breadcrumbs .breadcrumb li {
       display: inline-block;
-      margin: 0 7px; }
+      margin: 0 2px; }
       .breadcrumbs .breadcrumb li a {
         color: #000; }
     .breadcrumbs .breadcrumb .active {

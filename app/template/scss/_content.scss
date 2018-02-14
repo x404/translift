@@ -24,4 +24,40 @@ main{
 	p{
 		margin: 20px 0;
 	}
+
+	strong{
+		@extend .bold;
+	}
+
+	a{
+		color: #0563bf;
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+
+	h2{
+		font-family: "SegoeUIBold";
+		font-size: 18px;
+		font-weight: normal;
+	}
+
+	h3{
+		font-family: "SegoeUIBold";
+		font-size: 14px;
+		font-weight: normal;
+		margin-bottom: 0;
+	}
+
+	h4{
+		font-family: "SegoeUIBold";
+		font-size: 13px;
+		font-weight: normal;
+	}
+
+	.gallery{
+		margin: 4rem 0;
+	}
 }

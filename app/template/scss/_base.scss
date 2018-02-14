@@ -536,35 +536,35 @@ h1{
 
 /* =listProducts
 ---------------------------*/
-.listProducts{
+.gallery{
 	margin-top: 2rem;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	figure{
+		display: block;
+		overflow: hidden;
+		width: 205px;
+		img{
+			@include transition-param(transform);
+			vertical-align: top;
+		}
+	}
+	figcaption{
+		// @include transition-param(background-color, color);
+		transition: .3s background-color, color ease-out;
+		display: flex;
+		align-items: center;
+		height: 4.6rem;
+		padding-left: .9rem;
+		background: #e6e6e6;
+		color: $color5;	
+		text-transform: uppercase;
+		position: relative;
+	}
 	&__item{
 		text-decoration: none;
-		// flex-basis: 20%;
-		figure{
-			display: block;
-			overflow: hidden;
-			width: 205px;
-			img{
-				@include transition-param(transform);
-				vertical-align: top;
-			}
-		}
-		figcaption{
-			// @include transition-param(background-color, color);
-			transition: .3s background-color, color ease-out;
-			display: flex;
-			align-items: center;
-			height: 4.6rem;
-			padding-left: .9rem;
-			background: #e6e6e6;
-			color: $color5;	
-			text-transform: uppercase;
-			position: relative;
-		}
 		&:hover{
+			text-decoration: none;
 			img{
 				transform: scale(1.1);
 			}
@@ -575,6 +575,7 @@ h1{
 		}
 	}
 }
+
 /* =/listProducts
 ---------------------------*/
 
@@ -635,7 +636,7 @@ h1{
 .footer{
 	padding-top: 4rem;
 	.container{
-		padding: 0 14px;
+		// padding: 0 14px;
 	}
 
 	&__top{

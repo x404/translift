@@ -836,9 +836,9 @@ h3 {
 i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .close-modal, #callback form {
   font-family: "SegoeUIItalic"; }
 
-.tdn, .breadcrumbs ul li a, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a {
+.tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a {
   text-decoration: none; }
-  .tdn:hover, .breadcrumbs ul li a:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover {
+  .tdn:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover, .breadcrumbs .breadcrumb li a:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -846,7 +846,7 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
   .tdu:hover {
     text-decoration: none; }
 
-.before, nav .nav-tabs > li .subnav:before, .line:after, h1:after, .gallery a:after, .footer .social a:after, .steps__scheme:after, .news__title:after {
+.before, nav .nav-tabs > li .subnav:before, .line:after, main:after, h1:after, .gallery a:after, .footer .social a:after, .steps__scheme:after, .news__title:after {
   content: "";
   display: block;
   position: absolute; }
@@ -910,14 +910,6 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
 
 section h1 {
   text-align: center; }
-
-.share {
-  font-size: 18px;
-  font-size: 1.8rem;
-  font-family: "SegoeUIItalic";
-  padding-bottom: 3.8rem; }
-  .share p {
-    padding-bottom: 2rem; }
 
 /* =header
 ---------------------------*/
@@ -1056,30 +1048,19 @@ nav {
 
 /* =/header
 ---------------------------*/
-/* =breadcrumbs
----------------------------*/
-.breadcrumbs {
-  font-family: "SegoeUIItalic";
-  margin-top: 5.5rem;
-  margin-bottom: 2.5rem;
-  text-transform: lowercase; }
-  .breadcrumbs ul li {
-    display: inline-block; }
-    .breadcrumbs ul li a {
-      color: #000; }
-
-/* =/breadcrumbs
----------------------------*/
 /* =main
 ---------------------------*/
-.line, h1 {
+.line, main, h1 {
   position: relative; }
-  .line:after, h1:after {
+  .line:after, main:after, h1:after {
     border-bottom: 1px solid #d5d5d5;
     left: 50%;
     width: 40%;
     margin-left: -20%;
     bottom: 0; }
+
+main:after {
+  bottom: 20px; }
 
 h1 {
   font-weight: normal;
@@ -1765,6 +1746,51 @@ label.error {
   color: #004d91;
   padding: 0 2.8rem; }
 
+main {
+  color: #333;
+  padding-bottom: 2.5rem; }
+  main h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #0563bf; }
+    main h1:after {
+      bottom: 6px; }
+  main ul {
+    list-style: none; }
+    main ul li {
+      position: relative; }
+      main ul li:before {
+        content: "-";
+        margin-right: 5px; }
+  main p {
+    margin: 20px 0; }
+
+/* =breadcrumbs
+---------------------------*/
+.breadcrumbs {
+  font-family: "SegoeUIItalic";
+  margin-top: 5.5rem;
+  text-transform: lowercase; }
+  .breadcrumbs .breadcrumb {
+    display: flex;
+    color: #b2b2b2; }
+    .breadcrumbs .breadcrumb li {
+      display: inline-block;
+      margin: 0 7px; }
+      .breadcrumbs .breadcrumb li a {
+        color: #000; }
+    .breadcrumbs .breadcrumb .active {
+      color: #0563bf; }
+
+/* =/breadcrumbs
+---------------------------*/
+/* =share
+---------------------------*/
+.share {
+  text-align: center; }
+
+/* =/share
+---------------------------*/
 .modal-open {
   padding-right: 17px;
   overflow: hidden; }

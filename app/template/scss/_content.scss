@@ -1,0 +1,27 @@
+main{
+	color: #333;
+	padding-bottom: 2.5rem;
+	h1{
+		text-align: center;
+		text-transform: uppercase;
+		color: #0563bf;
+		&:after{
+			bottom: 6px;
+		}
+	}
+
+	ul{
+		list-style: none;
+		li{
+			position: relative;
+			&:before{
+				content: "-";
+				margin-right: 5px;
+			}
+		}
+	}
+
+	p{
+		margin: 20px 0;
+	}
+}

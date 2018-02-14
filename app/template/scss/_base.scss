@@ -16,6 +16,7 @@ $color11:#d5d5d5;
 $color12:#ececec;
 $color13:#c6c6c6;
 $color14:#4c4c4c;
+$color15:#0563bf;
 
 
 
@@ -273,15 +274,15 @@ section{
 }
 
 
-.share{
-	@include font-size(1.8);
-	// color: $color8;
-	font-family: "SegoeUIItalic";
-	padding-bottom: 3.8rem;
-	p{
-		padding-bottom: 2rem;
-	}
-}
+// .share{
+// 	@include font-size(1.8);
+// 	// color: $color8;
+// 	font-family: "SegoeUIItalic";
+// 	padding-bottom: 3.8rem;
+// 	p{
+// 		padding-bottom: 2rem;
+// 	}
+// }
 
 
 
@@ -458,28 +459,7 @@ nav{
 /* =/header
 ---------------------------*/
 
-/* =breadcrumbs
----------------------------*/
-.breadcrumbs{
-	font-family: "SegoeUIItalic";	
-	margin-top: 5.5rem;
-	margin-bottom: 2.5rem;
-	text-transform: lowercase;
-	ul{
-		li{
-			display: inline-block;
-			span{
-				// color: $color5;
-			}
-			a{
-				color: $color1;
-				@extend .tdn;
-			}
-		}
-	}
-}
-/* =/breadcrumbs
----------------------------*/
+
 
 
 /* =main
@@ -496,6 +476,14 @@ nav{
 		bottom: 0;
 	}	
 }
+
+main{
+	@extend .line;
+	&:after{
+		bottom: 20px;
+	}
+}
+
 
 h1{
 	@extend .line;

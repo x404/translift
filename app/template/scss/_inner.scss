@@ -1,0 +1,35 @@
+/* =breadcrumbs
+---------------------------*/
+.breadcrumbs{
+	font-family: "SegoeUIItalic";	
+	margin-top: 5.5rem;
+	text-transform: lowercase;	
+	.breadcrumb{
+		display: flex;
+		color: $color7;
+		li{
+			display: inline-block;
+			margin: 0 7px; 
+			a{
+				color: $color1;
+				@extend .tdn;
+			}
+		}
+		.active{
+			color: $color15;
+		}
+	}
+}
+/* =/breadcrumbs
+---------------------------*/
+
+
+/* =share
+---------------------------*/
+.share{
+	// margin: 2.5rem 0;
+	text-align: center;
+}
+/* =/share
+---------------------------*/
+

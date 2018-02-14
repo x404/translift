@@ -50,7 +50,6 @@
 				<div class="contacts">
 					<a href="tel:+74952595109" title="" class="tel">+7 (495) 259-51-09</a>
 					<a href="#" title="" class="md-trigger" data-modal="callback">хотите связаться?</a>
-
 				</div>
 				<div class="header__nav">
 					<!-- =nav -->
@@ -310,9 +309,9 @@
 				<div class="container">
 					<div class="row">
 						<label for="name" class="visually-hidden">ваше имя</label>
-						<input name="name" id="name" type="text" value="" class="form-control required" placeholder="ваше имя *">
+						<input name="name" id="name" type="text" value="" class="form-control required" required="required" placeholder="ваше имя *">
 						<label for="tel" class="visually-hidden">ваш номер телефона</label>
-						<input name="tel" id="tel" type="tel" value="" class="form-control required" placeholder="ваш номер телефона *">
+						<input name="tel" id="tel" type="tel" value="" class="form-control required" required="required" placeholder="ваш номер телефона *">
 						<label for="email" class="visually-hidden">ваш e-mail</label>
 						<input name="email" id="email" type="email" value="" class="form-control email" placeholder="ваш e-mail">
 					</div>
@@ -408,7 +407,7 @@
 						</fieldset>
 					</form>
 					<p>Искали что-то на сайте и ненашли? Просто впишите в поиск то что вам нужно и если это у нас есть, то это обязательно найдется ) ... или напишите нам.</p>
-					<a href="#" title="">форма обратной связи</a>
+					<a href="#" title="" class="md-trigger" data-modal="feedback">форма обратной связи</a>
 				</div>
 			</div>
 		</div>
@@ -466,6 +465,42 @@
 </div>
 <!-- =/modal callback -->
 
+
+<!-- =modal feedback -->
+<div class="md-modal md-effect-9"" id="feedback" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="md-content modal-dialog" role="document">
+		<div class="container">
+			<div class="modal__body">
+				<p class="title">ОСТАЛИСЬ ВОПРОСЫ ?</p>
+				<form action="#" method="post" id="feedback-form2" class="feedback__form form-policy">
+					<fieldset>
+						<div class="container">
+							<div class="row">
+								<label for="m_name" class="visually-hidden">ваше имя</label>
+								<input name="name" id="m_name" type="text" value="" class="form-control required" required="required" placeholder="ваше имя *">
+								<label for="m_tel" class="visually-hidden">ваш номер телефона</label>
+								<input name="tel" id="m_tel" type="tel" value="" class="form-control required" required="required" placeholder="ваш номер телефона *">
+								<label for="m_email" class="visually-hidden">ваш e-mail</label>
+								<input name="email" id="m_email" type="email" value="" class="form-control email" placeholder="ваш e-mail">
+							</div>
+							<div class="row">
+								<label for="m_msg" class="visually-hidden">текст вашего сообщения</label>
+								<textarea name="msg" id="m_msg" cols="30" rows="10" placeholder="текст вашего сообщения"></textarea>
+							</div>
+							<input type="submit" class="submit btn" value="Отправить">
+							<div class="policy">
+								<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access">
+								<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#.pdf" title="" target="_blank">Пользовательского соглашения</a></label>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+			<button type="button" data-dismiss="modal" class="md-close visually-hidden" aria-label="Закрыть">закрыть</button>
+		</div>
+	</div>
+</div>
+<!-- =/modal feedback -->
 
 
 <div class="md-overlay"></div>

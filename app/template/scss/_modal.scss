@@ -157,11 +157,22 @@
 form{
 	.thank{
 		color: $color3;
-		background-color: $color2;
+		// background-color: $color2;
 		font-size: 18px;
 		padding: 90px 0 100px;
 	}
 }
+
+
+
+#feedback{
+	.thank{
+		padding: 120px 0 155px;
+	}
+}
+
+
+
 
 #callback{
 	form{
@@ -191,75 +202,11 @@ form{
 }
 
 
-#qorder,
-#addreview{
-	.modal-dialog{
-		padding-bottom: 0;
-		.close-modal{
-			top: -17px;
-		}
-	}
-	.submit{
-		margin-top: 24px;
-	}
-	.feedback__form{
-		// background-color: $color15;
-		max-width: 100%;
-		padding-top: 15px;
-		padding-bottom: 25px;
-		.file-upload{
-			background: url(../images/upload.png) no-repeat left -54px;
-			&:hover{
-				background-position: left -216px;
-			}
-		}
-	}
-}
 
 
-#addreview{
-	.form-policy{
-		margin-top: 40px;
-	}
-
-	.thank{
-		padding: 180px 0 182px;
-	}
-}
-
-
-#about{
-	.modal__content{
-		.title{
-			padding-bottom: .5rem;
-			text-transform: uppercase;
-		}
-
-		@extend .italic;
-		background-color: $color2;
-		border: 1px solid $color4;
-		color: $color3;
-		line-height: 1.7;
-		padding: 2rem 1.5rem;
-	}
-}
 
 .submit:disabled{
 	cursor: default !important;
 	background-color: #ccc !important;
 }
 
-
-
-#qorder{
-	padding-right: 0 !important;
-	.top{
-		p:not(.title){
-			color: #363636;			
-		}
-	}
-
-	.form-policy{
-		margin-top: 14px;
-	}
-}

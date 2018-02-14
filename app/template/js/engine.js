@@ -50,6 +50,7 @@ $(document).ready(function(){
 	var errorTxt = 'Возникла ошибка при отправке заявки!';
 
 
+	$('.tel').inputmask("+7(999)999-99-99");
 	// validation forms
 	$.validator.addMethod("validphone", function(value){
 		if (Inputmask.isValid(value, { mask: '+7(999)999-99-99'})) return true
@@ -93,8 +94,61 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.tel').inputmask("+7(999)999-99-99");
 
+	// форма обратной связи
+	$('#feedback-form').validate({
+		submitHandler: function(form){
+			var strSubmit=$(form).serialize();
+			$(form).find('fieldset').hide();
+			$(form).append('<div class="sending">Идет отправка ...</div>');
+			$.ajax({
+				type: "POST",
+				url: $(form).attr('action'),
+				data: strSubmit,
+				success: function(){
+					$(form).html(thankcallback);
+				},
+				error: function(){
+					alert(errorTxt);
+					$(form).find('fieldset').show();
+				},
+				always: function(){
+					$('.sending').remove();					
+				}
+			})
+			.fail(function(error){
+				alert(errorTxt);
+			});
+		}
+	});
+
+	// форма обратной связи в подвале
+	$('#feedback-form2').validate({
+		submitHandler: function(form){
+			var strSubmit=$(form).serialize();
+			$(form).find('fieldset').hide();
+			$(form).append('<div class="sending">Идет отправка ...</div>');
+			$.ajax({
+				type: "POST",
+				url: $(form).attr('action'),
+				data: strSubmit,
+				success: function(){
+					$(form).html(thankcallback);
+					$(form).closest('.modal__body').find('.title').remove();
+				},
+				error: function(){
+					alert(errorTxt);
+					$(form).find('fieldset').show();
+				},
+				always: function(){
+					$('.sending').remove();					
+				}
+			})
+			.fail(function(error){
+				alert(errorTxt);
+			});
+		}
+	});
 
 
 

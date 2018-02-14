@@ -33,6 +33,7 @@ var ModalEffects = (function() {
 			}
 
 			el.addEventListener( 'click', function( ev ) {
+				ev.preventDefault();
 				classie.add( modal, 'md-show' );
 				overlay.removeEventListener( 'click', removeModalHandler );
 				overlay.addEventListener( 'click', removeModalHandler );

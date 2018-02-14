@@ -833,7 +833,7 @@ h3 {
 .bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, .modal-dialog .title {
   font-family: "SegoeUIBold"; }
 
-i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .close-modal, #callback form, #about .modal__content {
+i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .close-modal, #callback form {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .breadcrumbs ul li a, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a {
@@ -1593,7 +1593,6 @@ label.error {
       margin-top: 0; }
     .feedback__form .row input.form-control,
     .feedback__form .row textarea {
-      color: #fff;
       border: 1px solid #0563bf;
       font-size: 15px;
       padding-left: 1.5rem;
@@ -1624,7 +1623,8 @@ label.error {
       border-radius: 3px;
       height: 38px;
       padding-bottom: 4px;
-      width: 352px;
+      min-width: 352px;
+      width: 32%;
       text-align: center; }
       .feedback__form .row input.form-control::-webkit-input-placeholder {
         color: #b2b2b2; }
@@ -1874,9 +1874,11 @@ label.error {
 
 form .thank {
   color: #0563bf;
-  background-color: #fff;
   font-size: 18px;
   padding: 90px 0 100px; }
+
+#feedback .thank {
+  padding: 120px 0 155px; }
 
 #callback form {
   width: 90%;
@@ -1906,55 +1908,9 @@ form .thank {
     margin-top: 1.5rem;
     margin-bottom: 1rem; }
 
-#qorder .modal-dialog,
-#addreview .modal-dialog {
-  padding-bottom: 0; }
-  #qorder .modal-dialog .close-modal,
-  #addreview .modal-dialog .close-modal {
-    top: -17px; }
-
-#qorder .submit,
-#addreview .submit {
-  margin-top: 24px; }
-
-#qorder .feedback__form,
-#addreview .feedback__form {
-  max-width: 100%;
-  padding-top: 15px;
-  padding-bottom: 25px; }
-  #qorder .feedback__form .file-upload,
-  #addreview .feedback__form .file-upload {
-    background: url(../images/upload.png) no-repeat left -54px; }
-    #qorder .feedback__form .file-upload:hover,
-    #addreview .feedback__form .file-upload:hover {
-      background-position: left -216px; }
-
-#addreview .form-policy {
-  margin-top: 40px; }
-
-#addreview .thank {
-  padding: 180px 0 182px; }
-
-#about .modal__content {
-  background-color: #fff;
-  border: 1px solid #d5d5d5;
-  color: #0563bf;
-  line-height: 1.7;
-  padding: 2rem 1.5rem; }
-  #about .modal__content .title {
-    padding-bottom: .5rem;
-    text-transform: uppercase; }
-
 .submit:disabled {
   cursor: default !important;
   background-color: #ccc !important; }
-
-#qorder {
-  padding-right: 0 !important; }
-  #qorder .top p:not(.title) {
-    color: #363636; }
-  #qorder .form-policy {
-    margin-top: 14px; }
 
 /* =mobile-menu
 ---------------------------*/

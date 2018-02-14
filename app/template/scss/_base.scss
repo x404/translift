@@ -106,13 +106,6 @@ h2{font-size:2.4rem}
 h3{font-size:1.6rem}
 
 
-*:focus{outline:none}
-
-input::-moz-focus-inner{
-	border: 0;
-	padding: 0;
-}
-
 
 /* font-family: "SegoeUIRegular"; */
 @font-face {
@@ -216,13 +209,24 @@ i, em, .italic{
 	transition: .3s all ease-out;
 	&:focus,
 	&:active{
-		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3)
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 15px rgba(5, 99, 191, 0.6)
 	}
 	&:disabled{
 		border-color: #ccc;
 		background: #EAEBE3;
 		cursor: default;
 		@include placeholder(#ccc);
+	}
+}
+
+.btn.submit{
+	transition: .3s all ease-out;
+	&:disabled{
+		$colorEnd : #287fa5 ;
+		$colorStart : #8fc2d7;
+		@include gradient-vertical($colorStart, $colorEnd);
+		filter: grayscale(.8);
+		opacity: .5;
 	}
 }
 
@@ -850,6 +854,10 @@ label.error{
 
 .form-control.error{
 	border-color: red !important;
+	&:focus,
+	&:active{
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 0, 0, 0.6)
+	}	
 }
 
 

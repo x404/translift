@@ -786,13 +786,6 @@ h2 {
 h3 {
   font-size: 1.6rem; }
 
-*:focus {
-  outline: none; }
-
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0; }
-
 /* font-family: "SegoeUIRegular"; */
 @font-face {
   font-family: "SegoeUIRegular";
@@ -840,7 +833,7 @@ input::-moz-focus-inner {
 .bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, .modal-dialog .title {
   font-family: "SegoeUIBold"; }
 
-i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .submit, .feedback__form .row input.form-control, .policy, .close-modal, #callback form, #about .modal__content {
+i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .close-modal, #callback form, #about .modal__content {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .breadcrumbs ul li a, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a {
@@ -865,7 +858,7 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
   font-size: 16px;
   transition: .3s all ease-out; }
   .form-control:focus, .form-control:active {
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3); }
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 15px rgba(5, 99, 191, 0.6); }
   .form-control:disabled {
     border-color: #ccc;
     background: #EAEBE3;
@@ -882,6 +875,17 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
       transition: line-height 0.5s ease; }
     .form-control:disabled:focus:-ms-input-placeholder {
       transition: line-height 0.5s ease; }
+
+.btn.submit {
+  transition: .3s all ease-out; }
+  .btn.submit:disabled {
+    background-image: -webkit-linear-gradient(top, #8fc2d7 0%, #287fa5 100%);
+    background-image: -o-linear-gradient(top, #8fc2d7 0%, #287fa5 100%);
+    background-image: linear-gradient(to bottom, #8fc2d7 0%, #287fa5 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF8FC2D7', endColorstr='#FF287FA5', GradientType=0);
+    filter: grayscale(0.8);
+    opacity: .5; }
 
 .submit {
   cursor: pointer; }
@@ -1345,6 +1349,8 @@ label.error {
 
 .form-control.error {
   border-color: red !important; }
+  .form-control.error:focus, .form-control.error:active {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(255, 0, 0, 0.6); }
 
 .visually-hidden {
   position: absolute;
@@ -1523,7 +1529,7 @@ label.error {
 
 /* =steps
 ---------------------------*/
-.submit {
+.btn {
   background-image: -webkit-linear-gradient(top, #8fc2d7 0%, #287fa5 100%);
   background-image: -o-linear-gradient(top, #8fc2d7 0%, #287fa5 100%);
   background-image: linear-gradient(to bottom, #8fc2d7 0%, #287fa5 100%);
@@ -1538,7 +1544,7 @@ label.error {
   margin: 20px auto;
   text-transform: lowercase;
   width: 176px; }
-  .submit:hover {
+  .btn:hover {
     background-image: -webkit-linear-gradient(top, #287fa5 0%, #8fc2d7 100%);
     background-image: -o-linear-gradient(top, #287fa5 0%, #8fc2d7 100%);
     background-image: linear-gradient(to bottom, #287fa5 0%, #8fc2d7 100%);

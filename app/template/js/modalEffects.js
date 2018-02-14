@@ -21,7 +21,6 @@ var ModalEffects = (function() {
 
 			function removeModal( hasPerspective ) {
 				classie.remove( modal, 'md-show' );
-				classie.remove( document.body, 'modal-open' );
 
 				if( hasPerspective ) {
 					classie.remove( document.documentElement, 'md-perspective' );
@@ -30,6 +29,7 @@ var ModalEffects = (function() {
 
 			function removeModalHandler() {
 				removeModal( classie.has( el, 'md-setperspective' ) ); 
+				classie.remove( document.body, 'modal-open' );
 			}
 
 			el.addEventListener( 'click', function( ev ) {
@@ -48,7 +48,7 @@ var ModalEffects = (function() {
 
 			close.addEventListener( 'click', function( ev ) {
 				ev.stopPropagation();
-				removeModalHandler();
+				removeModalHandler();				
 			});
 
 		} );
@@ -60,10 +60,10 @@ var ModalEffects = (function() {
 })();
 
 $(document).keyup(function(e) {
-  if (e.keyCode == 27) {
-    if ($(".md-modal").hasClass('md-show')) {
-      console.debug('Pushed: "ESC"');
-      $('.md-modal').removeClass('md-show');
-    }
-  }
+	if (e.keyCode == 27) {
+	if ($('.md-modal').hasClass('md-show')) {
+		$('.md-modal').removeClass('md-show');
+		classie.remove( document.body, 'modal-open' );
+	}
+	}
 });

@@ -6,29 +6,33 @@
 
 // Kill the scroll on the body
 .modal-open {
+	padding-right: 17px;
   overflow: hidden;
+  .outerwrapper{
+  	filter: blur(3px);
+  }
   .inner{
   	filter: blur(6px)
   }
 }
 
 // Container that the modal scrolls within
-.modal {
-  padding-right: 0 !important;
-  position: fixed;
-  top: 16%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 9999;
-  // display: none;
-  overflow: hidden;
-  // Prevent Chrome on Windows from adding a focus outline. For details, see
-  // https://github.com/twbs/bootstrap/pull/10951.
-  outline: 0;
-  // We deliberately don't use `-webkit-overflow-scrolling: touch;` due to a
-  // gnarly iOS Safari bug: https://bugs.webkit.org/show_bug.cgi?id=158342
-  // See also https://github.com/twbs/bootstrap/issues/17695
+.modal,
+.md-modal1 {
+	padding-right: 0 !important;
+	position: fixed;
+	top: 16%;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 2000;
+	// display: none;
+	overflow: hidden;
+	outline: 0;
+	visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
 
   // When fading in the modal, animate it to slide down
   &.fade .modal-dialog {
@@ -37,7 +41,8 @@
   }
   &.show .modal-dialog { transform: translate(0, 0); }
 }
-.modal-open .modal {
+.modal-open .modal,
+.modal-open .md-modal {
   overflow-x: hidden;
   overflow-y: auto;
 }

@@ -49,7 +49,8 @@
 			<div class="header__bottom">
 				<div class="contacts">
 					<a href="tel:+74952595109" title="" class="tel">+7 (495) 259-51-09</a>
-					<a href="#" title="" data-toggle="modal" data-target="#callback">хотите связаться?</a>
+					<a href="#" title="" class="md-trigger" data-modal="callback">хотите связаться?</a>
+
 				</div>
 				<div class="header__nav">
 					<!-- =nav -->
@@ -437,10 +438,9 @@
 <!-- =/footer -->
 
 
-
 <!-- =modal callback -->
-<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog" role="document">
+<div class="md-modal md-effect-9"" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="md-content modal-dialog" role="document">
 		<div class="container">
 			<div class="modal__body">
 				<p class="title">ХОТИТЕ ЧТОБЫ ВАМ ПЕРЕЗВОНИЛИ ?</p>
@@ -460,7 +460,7 @@
 					</fieldset>
 				</form>
 			</div>
-			<button type="button" data-dismiss="modal" class="close-modal visually-hidden" aria-label="Закрыть"></button>
+			<button type="button" data-dismiss="modal" class="md-close visually-hidden" aria-label="Закрыть"></button>
 		</div>
 	</div>
 </div>
@@ -468,10 +468,13 @@
 
 
 
-
+<div class="md-overlay"></div>
 <div id="outdated"></div>
 <link rel="stylesheet" property="stylesheet" href="outdatedbrowser/outdatedbrowser.min.css" />
 <script src="/outdatedbrowser/outdatedbrowser.min.js"></script>
+
+<script src="/template/js/classie.js"></script>
+<script src="/template/js/modalEffects.js"></script>
 
 <script src="/template/js/owl.carousel.min.js"></script>
 <link rel="stylesheet" property="stylesheet" href="template/css/owl.carousel.css">

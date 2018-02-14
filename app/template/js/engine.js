@@ -38,6 +38,35 @@ $(document).ready(function(){
 			};
 		init();
 	});	
+
+
+	// validation forms
+	$('#callback-form').validate({
+		submitHandler: function(form){
+			var strSubmit=$(form).serialize();
+			$(form).find('fieldset').hide();
+			$(form).append('<div class="sending">Идет отправка ...</div>');
+			$.ajax({
+				type: "POST",
+				url: $(form).attr('action'),
+				data: strSubmit,
+				success: function(){
+					$(form).closest('.modal__body').html(thankcallback);
+					startClock('callback-form');
+				},
+				error: function(){
+					alert(errorTxt);
+					$(form).find('fieldset').show();
+					$('.sending').remove();
+				}
+			})
+			.fail(function(error){
+				alert(errorTxt);
+			});
+		}
+	});
+
+	
 });
 
 // =заглушка для IE
@@ -65,3 +94,20 @@ addLoadEvent(function(){
 	})
 });
 // =/заглушка для IE
+
+
+
+$(function(){
+	$('.policy input').click(function(){
+		var $this = $(this),
+			$submit = $this.closest('.form-policy');
+
+		if ($this.is(':checked')){
+			$submit.removeClass('disabled');
+			$submit.find('.input, .form-control, .submit, textarea, input[type=radio]').removeAttr('disabled');
+		} else {
+			$submit.addClass('disabled');
+			$submit.find('.input, .form-control, .submit, textarea, input[type=radio]').attr('disabled', true);
+		}
+	})
+});

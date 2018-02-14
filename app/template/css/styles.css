@@ -862,9 +862,26 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
   border: 1px solid #0563bf;
   border-radius: 3px;
   margin-top: 0.6rem;
-  font-size: 16px; }
+  font-size: 16px;
+  transition: .3s all ease-out; }
   .form-control:focus, .form-control:active {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3); }
+  .form-control:disabled {
+    border-color: #ccc;
+    background: #EAEBE3;
+    cursor: default; }
+    .form-control:disabled::-webkit-input-placeholder {
+      color: #ccc; }
+    .form-control:disabled::-moz-placeholder {
+      color: #ccc; }
+    .form-control:disabled:-ms-input-placeholder {
+      color: #ccc; }
+    .form-control:disabled:focus::-webkit-input-placeholder {
+      transition: line-height 0.5s ease; }
+    .form-control:disabled:focus::-moz-placeholder {
+      transition: line-height 0.5s ease; }
+    .form-control:disabled:focus:-ms-input-placeholder {
+      transition: line-height 0.5s ease; }
 
 .submit {
   cursor: pointer; }
@@ -1860,7 +1877,6 @@ form .thank {
   margin-left: auto;
   margin-right: auto; }
   #callback form .form-control {
-    background-color: #fff;
     font-size: 17px;
     color: #808080;
     flex-grow: 1;

@@ -17,6 +17,7 @@ $color12:#ececec;
 $color13:#c6c6c6;
 $color14:#4c4c4c;
 $color15:#0563bf;
+$color16:#ccc;
 
 
 
@@ -284,6 +285,20 @@ section{
 // 	}
 // }
 
+
+.flexcenter{
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+.gray{
+	filter: grayscale(1);
+	@include transition-param(filter);
+	&:hover{
+		filter: grayscale(0);		
+	}
+}
 
 
 /* =header

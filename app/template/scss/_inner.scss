@@ -33,3 +33,31 @@
 /* =/share
 ---------------------------*/
 
+
+
+
+.partnersList{
+	margin-bottom: -2rem;
+	ul{
+		display: flex;
+		flex-wrap: wrap;
+		li{
+			flex-basis: 20%;
+			margin-bottom: 2rem;
+			&:before{
+				display: none;
+			}
+			a{
+				@extend .flexcenter;
+				@extend .gray;
+				border: 1px solid $color16;
+				height: 126px;
+				margin-right: 25px;
+				width: 206px;
+				img{
+					vertical-align: top;
+				}
+			}			
+		}
+	}
+}

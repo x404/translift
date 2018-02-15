@@ -911,6 +911,18 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
 section h1 {
   text-align: center; }
 
+.flexcenter, .partnersList ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.gray, .partnersList ul li a {
+  filter: grayscale(1);
+  -webkit-transition: filter 0.2s ease-out;
+  transition: filter 0.2s ease-out; }
+  .gray:hover, .partnersList ul li a:hover {
+    filter: grayscale(0); }
+
 /* =header
 ---------------------------*/
 .header {
@@ -1811,6 +1823,24 @@ main {
 
 /* =/share
 ---------------------------*/
+.partnersList {
+  margin-bottom: -2rem; }
+  .partnersList ul {
+    display: flex;
+    flex-wrap: wrap; }
+    .partnersList ul li {
+      flex-basis: 20%;
+      margin-bottom: 2rem; }
+      .partnersList ul li:before {
+        display: none; }
+      .partnersList ul li a {
+        border: 1px solid #ccc;
+        height: 126px;
+        margin-right: 25px;
+        width: 206px; }
+        .partnersList ul li a img {
+          vertical-align: top; }
+
 .modal-open {
   padding-right: 17px;
   overflow: hidden; }

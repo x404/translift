@@ -1,0 +1,39 @@
+.ajaxSearch_resultsInfos{
+	text-transform: uppercase;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.ajaxSearch_highlight{
+	color: $color3;
+}
+
+.ajaxSearch_resultsInfos,
+.ajaxSearch_grpResult{
+	position: relative;
+	padding-bottom: 25px;
+	&:after{
+		@extend .before;
+		$w: 510px;
+		width: $w;
+		height: 1px;
+		left: 50%;
+		bottom: 0;
+		margin-left: -$w/2;
+		border-bottom: 1px solid #d5d5d5;
+	}
+}
+
+.ajaxSearch_result{
+	margin-top: 2.5rem;
+}
+
+
+.ajaxSearch_resultExtract{
+	margin-top: .7rem;
+}
+
+.ajaxSearch_resultLink{
+	color: $color3;
+	@extend .tdn;
+}

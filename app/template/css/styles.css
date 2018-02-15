@@ -840,10 +840,10 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
   font-family: "SegoeUIItalic"; }
 
 .tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a, .pagination a, .order a,
-.contact-page a {
+.contact-page a, .ajaxSearch_resultLink {
   text-decoration: none; }
   .tdn:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover, .breadcrumbs .breadcrumb li a:hover, .pagination a:hover, .order a:hover,
-  .contact-page a:hover {
+  .contact-page a:hover, .ajaxSearch_resultLink:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -852,7 +852,8 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
     text-decoration: none; }
 
 .before, nav .nav-tabs > li .subnav:before, .line:before, h1:before,
-.linetop:before, .share:before, .gallery a:not(.gallery__item):after, .footer .social a:after, .steps__scheme:after, .news__title:after {
+.linetop:before, .share:before, .gallery a:not(.gallery__item):after, .footer .social a:after, .steps__scheme:after, .news__title:after, .ajaxSearch_resultsInfos:after,
+.ajaxSearch_grpResult:after {
   content: "";
   display: block;
   position: absolute; }
@@ -1991,6 +1992,15 @@ main,
         .partnersList ul li a img {
           vertical-align: top; }
 
+.logotype {
+  display: block;
+  border: 1px solid #004d91;
+  margin-bottom: .8rem;
+  padding: 4rem 0;
+  text-align: center; }
+  .logotype img {
+    vertical-align: top; }
+
 .modal-open {
   padding-right: 17px;
   overflow: hidden; }
@@ -2175,6 +2185,36 @@ form .thank {
 .order .feedback__form,
 .contact-page .feedback__form {
   margin-top: 3rem; }
+
+.ajaxSearch_resultsInfos {
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 10px; }
+
+.ajaxSearch_highlight {
+  color: #0563bf; }
+
+.ajaxSearch_resultsInfos,
+.ajaxSearch_grpResult {
+  position: relative;
+  padding-bottom: 25px; }
+  .ajaxSearch_resultsInfos:after,
+  .ajaxSearch_grpResult:after {
+    width: 510px;
+    height: 1px;
+    left: 50%;
+    bottom: 0;
+    margin-left: -255px;
+    border-bottom: 1px solid #d5d5d5; }
+
+.ajaxSearch_result {
+  margin-top: 2.5rem; }
+
+.ajaxSearch_resultExtract {
+  margin-top: .7rem; }
+
+.ajaxSearch_resultLink {
+  color: #0563bf; }
 
 .btn-groups {
   justify-content: center;

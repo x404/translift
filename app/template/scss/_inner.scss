@@ -122,3 +122,13 @@
 }
 
 
+.logotype{
+	display: block;	
+	border: 1px solid $color8;
+	margin-bottom: .8rem;
+	padding: 4rem 0;
+	text-align: center;
+	img{
+		vertical-align: top;
+	}
+}

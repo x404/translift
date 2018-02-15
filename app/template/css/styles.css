@@ -1830,6 +1830,20 @@ main,
   main .gallery,
   .text .gallery {
     margin: 4rem 0; }
+  main table a,
+  .text table a {
+    font-family: "SegoeUIItalic"; }
+    main table a[href$=".pdf"],
+    .text table a[href$=".pdf"] {
+      background: url(../images/pdf.png) no-repeat left center;
+      display: flex;
+      align-items: center;
+      min-height: 32px;
+      padding-left: 38px; }
+  main table td,
+  .text table td {
+    padding-top: 10px;
+    padding-bottom: 10px; }
 
 /* =breadcrumbs
 ---------------------------*/

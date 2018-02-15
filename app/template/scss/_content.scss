@@ -64,4 +64,22 @@ main,
 	.gallery{
 		margin: 4rem 0;
 	}
+
+
+	table{
+		a{
+			font-family: "SegoeUIItalic";
+			&[href$=".pdf"]{
+				background: url(../images/pdf.png) no-repeat left center;
+				display: flex;
+				align-items: center;
+				min-height: 32px;
+				padding-left: 38px;
+			}
+		}
+		td{
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+	}
 }

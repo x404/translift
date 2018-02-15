@@ -833,13 +833,12 @@ h3 {
 .bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, main strong, .modal-dialog .title {
   font-family: "SegoeUIBold"; }
 
-i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .pagination .ditto_page,
-.pagination .current, .close-modal, #callback form {
+i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .pagination, .close-modal, #callback form {
   font-family: "SegoeUIItalic"; }
 
-.tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a {
+.tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a, .pagination a {
   text-decoration: none; }
-  .tdn:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover, .breadcrumbs .breadcrumb li a:hover {
+  .tdn:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover, .breadcrumbs .breadcrumb li a:hover, .pagination a:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -847,7 +846,7 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
   .tdu:hover {
     text-decoration: none; }
 
-.before, nav .nav-tabs > li .subnav:before, .line:after, main:after, h1:after, .gallery a:after, .footer .social a:after, .steps__scheme:after, .news__title:after {
+.before, nav .nav-tabs > li .subnav:before, .line:after, main:not(.noline):after, h1:after, .gallery a:after, .footer .social a:after, .steps__scheme:after, .news__title:after {
   content: "";
   display: block;
   position: absolute; }
@@ -1064,17 +1063,20 @@ nav {
 ---------------------------*/
 /* =main
 ---------------------------*/
-.line, main, h1 {
+.line, main:not(.noline), h1 {
   position: relative; }
-  .line:after, main:after, h1:after {
+  .line:after, main:not(.noline):after, h1:after {
     border-bottom: 1px solid #d5d5d5;
     left: 50%;
     width: 40%;
     margin-left: -20%;
     bottom: 0; }
 
-main:after {
+main:not(.noline):after {
   bottom: 20px; }
+
+main.noline {
+  padding-bottom: 0; }
 
 h1 {
   font-weight: normal;
@@ -1187,7 +1189,7 @@ h1 {
 /* =footer
 ---------------------------*/
 .footer {
-  padding-top: 4rem; }
+  margin-top: 4rem; }
   .footer__top {
     background: #ececec; }
   .footer__bottom {
@@ -1825,8 +1827,11 @@ main {
       margin: 0 2px; }
       .breadcrumbs .breadcrumb li a {
         color: #000; }
+        .breadcrumbs .breadcrumb li a:hover {
+          color: #0563bf; }
     .breadcrumbs .breadcrumb .active {
-      color: #0563bf; }
+      color: #0563bf;
+      text-decoration: underline; }
 
 /* =/breadcrumbs
 ---------------------------*/
@@ -1857,12 +1862,18 @@ main {
   .pagination .ditto_page {
     background-color: #ececec;
     color: #808080; }
+    .pagination .ditto_page:hover {
+      text-decoration: none; }
   .pagination .ditto_page:hover,
   .pagination .current {
     background-color: #004d91;
     color: #fff; }
   .pagination i.separator {
     margin: 0 7px; }
+  .pagination a:hover {
+    color: #0563bf; }
+  .pagination ~ .share {
+    margin-top: 25px; }
 
 /* =/pagination
 ---------------------------*/

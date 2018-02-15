@@ -13,10 +13,14 @@
 			a{
 				color: $color1;
 				@extend .tdn;
+				&:hover{
+					color: $color3;
+				}
 			}
 		}
 		.active{
 			color: $color15;
+			text-decoration: underline;
 		}
 	}
 }
@@ -40,6 +44,8 @@
 	text-align: center;
 	justify-content: center;
 	display: flex;
+	// margin-bottom: 2.5rem;
+	@extend .italic;
 	.flexbox{
 		border-top: 1px solid $color11;
 		border-bottom: 1px solid $color11;
@@ -49,7 +55,6 @@
 	.ditto_page,
 	.current{
 		@extend .flexcenter;
-		@extend .italic;
 		$s: 24px;
 		width: $s;
 		height: $s;
@@ -60,6 +65,9 @@
 	.ditto_page{
 		background-color: $color12;
 		color: $color10;
+		&:hover{
+			text-decoration: none;
+		}
 	}
 	.ditto_page:hover,
 	.current{
@@ -68,6 +76,17 @@
 	}
 	i.separator{
 		margin: 0 7px;
+	}
+	a{
+		@extend .tdn;
+		&:hover{
+			color: $color3;
+		}
+	}
+
+
+	& ~ .share{
+		margin-top: 25px;
 	}
 }
 /* =/pagination

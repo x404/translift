@@ -493,9 +493,14 @@ nav{
 }
 
 main{
-	@extend .line;
-	&:after{
-		bottom: 20px;
+	&:not(.noline){
+		@extend .line;
+		&:after{
+			bottom: 20px;
+		}
+	}
+	&.noline{
+		padding-bottom: 0;
 	}
 }
 
@@ -649,10 +654,7 @@ h1{
 /* =footer
 ---------------------------*/
 .footer{
-	padding-top: 4rem;
-	.container{
-		// padding: 0 14px;
-	}
+	margin-top: 4rem;
 
 	&__top{
 		background: $color12;

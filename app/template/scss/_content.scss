@@ -1,5 +1,12 @@
-main{
-}
+.justifyleft {text-align:left !important; }
+.justifyright {text-align:right !important; }
+.justifycenter {text-align: center !important; }
+.justifyfull {text-align:justify !important; }
+
+img.justifyleft, table.justifyleft {float:left; margin-right:10px;margin-bottom:5px;}
+img.justifyright, table.justifyright {float:right; margin-left:10px;margin-bottom:5px;}
+img.justifycenter, table.justifycenter { display: block; margin-left: auto; margin-right: auto;}
+
 
 main,
 .text{
@@ -69,12 +76,29 @@ main,
 	table{
 		a{
 			font-family: "SegoeUIItalic";
-			&[href$=".pdf"]{
-				background: url(../images/pdf.png) no-repeat left center;
+			&[href$=".pdf"],
+			&[href$=".xls"],
+			&[href$=".xlsx"],
+			&[href$=".doc"],
+			&[href$=".docx"]
+			{
+				background-repeat: no-repeat;
+				background-position: left center;
 				display: flex;
 				align-items: center;
 				min-height: 32px;
 				padding-left: 38px;
+			}
+			&[href$=".pdf"]{
+				background-image: url(../images/pdf.png);
+			}
+			&[href$=".xls"],
+			&[href$=".xlsx"]{
+				background-image: url(../images/doc.png);
+			}
+			&[href$=".doc"],
+			&[href$=".docx"]{
+				background-image: url(../images/xls.png);
 			}
 		}
 		td{

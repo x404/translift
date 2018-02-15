@@ -1,0 +1,35 @@
+/* =catalog
+---------------------------*/
+.catalog{
+	margin-top: -15px;
+	margin-bottom: -25px;
+	.gallery__item{
+		width: 204px;
+		margin:0 25px 30px 0;
+		&:nth-child(5n){
+			margin-right: 0;
+		}
+	}
+}
+/* =/catalog
+---------------------------*/
+
+
+.order{
+	hr{
+		border: none;
+		width: 460px;
+		margin: 3rem auto;
+		height: 1px;
+		background: #d5d5d5;
+	}
+
+	a{
+		color: $color3;
+		@extend .tdn;
+	}
+
+	.feedback__form{
+		margin-top: 3rem;
+	}
+}

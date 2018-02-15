@@ -128,6 +128,7 @@
 .policy{
 	@extend .italic;
 	color: $color3;
+	text-align: left;
 	a{
 		@extend .tdn;
 		color: $color4;

@@ -837,9 +837,9 @@ h3 {
 i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .pagination, .close-modal, #callback form {
   font-family: "SegoeUIItalic"; }
 
-.tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a, .pagination a {
+.tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a, .pagination a, .order a {
   text-decoration: none; }
-  .tdn:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover, .breadcrumbs .breadcrumb li a:hover, .pagination a:hover {
+  .tdn:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover, .breadcrumbs .breadcrumb li a:hover, .pagination a:hover, .order a:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -1669,7 +1669,8 @@ label.error {
     padding-top: 105px; }
 
 .policy {
-  color: #0563bf; }
+  color: #0563bf;
+  text-align: left; }
   .policy a {
     color: #d5d5d5; }
 
@@ -1779,6 +1780,33 @@ label.error {
   .main .news__item:nth-child(3n) {
     margin-right: 0; }
 
+.justifyleft {
+  text-align: left !important; }
+
+.justifyright {
+  text-align: right !important; }
+
+.justifycenter {
+  text-align: center !important; }
+
+.justifyfull {
+  text-align: justify !important; }
+
+img.justifyleft, table.justifyleft {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px; }
+
+img.justifyright, table.justifyright {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 5px; }
+
+img.justifycenter, table.justifycenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
 main,
 .text {
   padding-bottom: 2.5rem;
@@ -1833,13 +1861,29 @@ main,
   main table a,
   .text table a {
     font-family: "SegoeUIItalic"; }
-    main table a[href$=".pdf"],
-    .text table a[href$=".pdf"] {
-      background: url(../images/pdf.png) no-repeat left center;
+    main table a[href$=".pdf"], main table a[href$=".xls"], main table a[href$=".xlsx"], main table a[href$=".doc"], main table a[href$=".docx"],
+    .text table a[href$=".pdf"],
+    .text table a[href$=".xls"],
+    .text table a[href$=".xlsx"],
+    .text table a[href$=".doc"],
+    .text table a[href$=".docx"] {
+      background-repeat: no-repeat;
+      background-position: left center;
       display: flex;
       align-items: center;
       min-height: 32px;
       padding-left: 38px; }
+    main table a[href$=".pdf"],
+    .text table a[href$=".pdf"] {
+      background-image: url(../images/pdf.png); }
+    main table a[href$=".xls"], main table a[href$=".xlsx"],
+    .text table a[href$=".xls"],
+    .text table a[href$=".xlsx"] {
+      background-image: url(../images/doc.png); }
+    main table a[href$=".doc"], main table a[href$=".docx"],
+    .text table a[href$=".doc"],
+    .text table a[href$=".docx"] {
+      background-image: url(../images/xls.png); }
   main table td,
   .text table td {
     padding-top: 10px;
@@ -1929,19 +1973,6 @@ main,
         .partnersList ul li a img {
           vertical-align: top; }
 
-/* =catalog
----------------------------*/
-.catalog {
-  margin-top: -15px;
-  margin-bottom: -25px; }
-  .catalog .gallery__item {
-    width: 204px;
-    margin: 0 25px 30px 0; }
-    .catalog .gallery__item:nth-child(5n) {
-      margin-right: 0; }
-
-/* =/catalog
----------------------------*/
 .modal-open {
   padding-right: 17px;
   overflow: hidden; }
@@ -2088,6 +2119,32 @@ form .thank {
 .submit:disabled {
   cursor: default !important;
   background-color: #ccc !important; }
+
+/* =catalog
+---------------------------*/
+.catalog {
+  margin-top: -15px;
+  margin-bottom: -25px; }
+  .catalog .gallery__item {
+    width: 204px;
+    margin: 0 25px 30px 0; }
+    .catalog .gallery__item:nth-child(5n) {
+      margin-right: 0; }
+
+/* =/catalog
+---------------------------*/
+.order hr {
+  border: none;
+  width: 460px;
+  margin: 3rem auto;
+  height: 1px;
+  background: #d5d5d5; }
+
+.order a {
+  color: #0563bf; }
+
+.order .feedback__form {
+  margin-top: 3rem; }
 
 /* =mobile-menu
 ---------------------------*/

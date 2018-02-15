@@ -5,18 +5,21 @@
 	}
 	&__item{
 		@extend .bold;
-		height: 308px;
+		flex-basis: 33.3%;
 		color: $color8;
-		border: 1px solid ;
-		width: 350px;
 		text-align: center;
 		text-transform: uppercase;
-		filter: grayscale(1);
+		filter: grayscale(1) brightness(230%);
 		@include transition-param(filter);
-			display: flex;
-			align-items: center;
+		height: 308px;
+		max-width: 350px;
+		display: flex;
+		align-items: center;
 		a{
-			display: block;
+			height: 308px;
+			border: 1px solid $color8;
+			@extend .flexcenter;
+			flex-direction: column;
 			text-decoration: none;
 		}
 		&:hover{
@@ -43,5 +46,22 @@
 	&__desc{
 		color: $color8;
 		padding: 0 2.8rem;
+	}
+}
+
+
+.main{
+	.news{
+		&__list{
+			justify-content: flex-start;
+			flex-wrap: wrap;
+		}
+		&__item{
+			margin-bottom: 3.8rem;
+			margin-right: 105px;
+			&:nth-child(3n){
+				margin-right: 0;
+			}
+		}
 	}
 }

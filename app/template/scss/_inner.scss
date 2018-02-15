@@ -34,6 +34,44 @@
 ---------------------------*/
 
 
+/* =pagination
+---------------------------*/
+.pagination{
+	text-align: center;
+	justify-content: center;
+	display: flex;
+	.flexbox{
+		border-top: 1px solid $color11;
+		border-bottom: 1px solid $color11;
+		padding: 14px 85px;
+
+	}
+	.ditto_page,
+	.current{
+		@extend .flexcenter;
+		@extend .italic;
+		$s: 24px;
+		width: $s;
+		height: $s;
+		border-radius: 3px;	
+		margin: 0 2px;
+		text-decoration: none;	
+	}
+	.ditto_page{
+		background-color: $color12;
+		color: $color10;
+	}
+	.ditto_page:hover,
+	.current{
+		background-color: $color8;
+		color: $color2;
+	}
+	i.separator{
+		margin: 0 7px;
+	}
+}
+/* =/pagination
+---------------------------*/
 
 
 .partnersList{

@@ -275,17 +275,6 @@ section{
 }
 
 
-// .share{
-// 	@include font-size(1.8);
-// 	// color: $color8;
-// 	font-family: "SegoeUIItalic";
-// 	padding-bottom: 3.8rem;
-// 	p{
-// 		padding-bottom: 2rem;
-// 	}
-// }
-
-
 .flexcenter{
 	display: flex;
 	align-items: center;
@@ -479,9 +468,10 @@ nav{
 
 /* =main
 ---------------------------*/
-.line{
+.line,
+.linetop{
 	position: relative;
-	&:after{
+	&:before{
 		@extend .before;
 		border-bottom: 1px solid $color4;
 		left: 50%;
@@ -492,16 +482,19 @@ nav{
 	}	
 }
 
-main{
-	&:not(.noline){
-		@extend .line;
-		&:after{
-			bottom: 20px;
-		}
+.linetop{
+	&:before{
+		$w: 460px;
+		width: $w;
+		bottom: auto;
+		top: -20px;
 	}
-	&.noline{
-		padding-bottom: 0;
-	}
+}
+
+
+
+.share{
+	@extend .linetop;	
 }
 
 
@@ -608,7 +601,7 @@ h1{
 	img{
 		vertical-align: top;
 	}
-	a{
+	a:not(.gallery__item){
 		display: block;
 		position: relative;
 		overflow: hidden;

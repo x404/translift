@@ -830,7 +830,8 @@ h3 {
   font-family: 'CenturyGothic';
   src: url("../fonts/CenturyGothic.woff2") format("woff2"), url("../fonts/CenturyGothic.woff") format("woff"), url("../fonts/CenturyGothic.ttf") format("truetype"); }
 
-.bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, main strong, .modal-dialog .title {
+.bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, main strong,
+.text strong, .modal-dialog .title {
   font-family: "SegoeUIBold"; }
 
 i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .pagination, .close-modal, #callback form {
@@ -846,7 +847,8 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
   .tdu:hover {
     text-decoration: none; }
 
-.before, nav .nav-tabs > li .subnav:before, .line:after, main:not(.noline):after, h1:after, .gallery a:after, .footer .social a:after, .steps__scheme:after, .news__title:after {
+.before, nav .nav-tabs > li .subnav:before, .line:before, h1:before,
+.linetop:before, .share:before, .gallery a:not(.gallery__item):after, .footer .social a:after, .steps__scheme:after, .news__title:after {
   content: "";
   display: block;
   position: absolute; }
@@ -1063,20 +1065,23 @@ nav {
 ---------------------------*/
 /* =main
 ---------------------------*/
-.line, main:not(.noline), h1 {
+.line, h1,
+.linetop,
+.share {
   position: relative; }
-  .line:after, main:not(.noline):after, h1:after {
+  .line:before, h1:before,
+  .linetop:before,
+  .share:before {
     border-bottom: 1px solid #d5d5d5;
     left: 50%;
     width: 40%;
     margin-left: -20%;
     bottom: 0; }
 
-main:not(.noline):after {
-  bottom: 20px; }
-
-main.noline {
-  padding-bottom: 0; }
+.linetop:before, .share:before {
+  width: 460px;
+  bottom: auto;
+  top: -20px; }
 
 h1 {
   font-weight: normal;
@@ -1153,14 +1158,14 @@ h1 {
   justify-content: space-between; }
   .gallery img {
     vertical-align: top; }
-  .gallery a {
+  .gallery a:not(.gallery__item) {
     display: block;
     position: relative;
     overflow: hidden;
     opacity: .55;
     -webkit-transition: opacity 0.2s ease-out;
     transition: opacity 0.2s ease-out; }
-    .gallery a:after {
+    .gallery a:not(.gallery__item):after {
       -webkit-transition: opacity 0.2s ease-out;
       transition: opacity 0.2s ease-out;
       background: url(../images/zoom.png) no-repeat center;
@@ -1171,14 +1176,14 @@ h1 {
       top: 50%;
       width: 59px;
       opacity: 0; }
-    .gallery a img {
+    .gallery a:not(.gallery__item) img {
       -webkit-transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out; }
-    .gallery a:hover {
+    .gallery a:not(.gallery__item):hover {
       opacity: 1; }
-      .gallery a:hover:after {
+      .gallery a:not(.gallery__item):hover:after {
         opacity: 1; }
-      .gallery a:hover img {
+      .gallery a:not(.gallery__item):hover img {
         transform: scale(1.1); }
 
 .map {
@@ -1774,43 +1779,56 @@ label.error {
   .main .news__item:nth-child(3n) {
     margin-right: 0; }
 
-main {
-  color: #333;
-  padding-bottom: 2.5rem; }
-  main h1 {
+main,
+.text {
+  padding-bottom: 2.5rem;
+  color: #333; }
+  main h1,
+  .text h1 {
     text-align: center;
     text-transform: uppercase;
     color: #0563bf; }
-    main h1:after {
+    main h1:after,
+    .text h1:after {
       bottom: 6px; }
-  main ul {
+  main ul,
+  .text ul {
     list-style: none; }
-    main ul li {
+    main ul li,
+    .text ul li {
       position: relative; }
-      main ul li:before {
+      main ul li:before,
+      .text ul li:before {
         content: "-";
         margin-right: 5px; }
-  main p {
+  main p,
+  .text p {
     margin: 20px 0; }
-  main a {
+  main a,
+  .text a {
     color: #0563bf;
     text-decoration: none; }
-    main a:hover {
+    main a:hover,
+    .text a:hover {
       text-decoration: underline; }
-  main h2 {
+  main h2,
+  .text h2 {
     font-family: "SegoeUIBold";
     font-size: 18px;
     font-weight: normal; }
-  main h3 {
+  main h3,
+  .text h3 {
     font-family: "SegoeUIBold";
     font-size: 14px;
     font-weight: normal;
     margin-bottom: 0; }
-  main h4 {
+  main h4,
+  .text h4 {
     font-family: "SegoeUIBold";
     font-size: 13px;
     font-weight: normal; }
-  main .gallery {
+  main .gallery,
+  .text .gallery {
     margin: 4rem 0; }
 
 /* =breadcrumbs
@@ -1874,6 +1892,8 @@ main {
     color: #0563bf; }
   .pagination ~ .share {
     margin-top: 25px; }
+    .pagination ~ .share:before {
+      display: none; }
 
 /* =/pagination
 ---------------------------*/
@@ -1895,6 +1915,19 @@ main {
         .partnersList ul li a img {
           vertical-align: top; }
 
+/* =catalog
+---------------------------*/
+.catalog {
+  margin-top: -15px;
+  margin-bottom: -25px; }
+  .catalog .gallery__item {
+    width: 204px;
+    margin: 0 25px 30px 0; }
+    .catalog .gallery__item:nth-child(5n) {
+      margin-right: 0; }
+
+/* =/catalog
+---------------------------*/
 .modal-open {
   padding-right: 17px;
   overflow: hidden; }

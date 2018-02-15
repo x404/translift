@@ -31,7 +31,6 @@
 /* =share
 ---------------------------*/
 .share{
-	// margin: 2.5rem 0;
 	text-align: center;
 }
 /* =/share
@@ -87,6 +86,9 @@
 
 	& ~ .share{
 		margin-top: 25px;
+		&:before{
+			display: none;
+		}
 	}
 }
 /* =/pagination
@@ -118,3 +120,22 @@
 		}
 	}
 }
+
+
+
+
+/* =catalog
+---------------------------*/
+.catalog{
+	margin-top: -15px;
+	margin-bottom: -25px;
+	.gallery__item{
+		width: 204px;
+		margin:0 25px 30px 0;
+		&:nth-child(5n){
+			margin-right: 0;
+		}
+	}
+}
+/* =/catalog
+---------------------------*/

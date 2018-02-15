@@ -1,0 +1,53 @@
+.btn-groups{
+	justify-content: center;
+	margin-top: 2.2rem;
+	.btn-lightgrey{
+		@extend .italic;
+		@extend .flexcenter;
+		background: #ececec;
+		border-radius: 3px;
+		color: $color10;
+		height: 32px;
+		margin: 0 4px;
+		text-align: center;
+		text-transform: uppercase;
+		width: 152px;
+		transition: all .3s ease-out;
+		&:hover,
+		&.active,
+		&.btn-active{
+			background-color: $color3;
+			text-decoration: none;
+			color: $color2;
+		}
+	}
+}
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: flex;
+  }
+}
+
+
+.contact-page{
+	.map{
+		margin-top: 3rem;
+	}
+	.address{
+		.cell{
+			text-align: left;
+		}
+	}
+	.tab-content{
+		color: $color5;
+		margin-bottom: 2rem;
+		.cell{
+			margin-right: 3rem;
+			line-height: 1.6;
+		}
+	}
+}

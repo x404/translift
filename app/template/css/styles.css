@@ -834,12 +834,14 @@ h3 {
 .text strong, .modal-dialog .title {
   font-family: "SegoeUIBold"; }
 
-i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .pagination, .close-modal, #callback form {
+i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .pagination, .close-modal, #callback form, .btn-groups .btn-lightgrey {
   font-family: "SegoeUIItalic"; }
 
-.tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a, .pagination a, .order a {
+.tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a, .pagination a, .order a,
+.contact-page a {
   text-decoration: none; }
-  .tdn:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover, .breadcrumbs .breadcrumb li a:hover, .pagination a:hover, .order a:hover {
+  .tdn:hover, .footer__bottom a:hover, .footer .info a:hover, .feedback .vcard .email:hover, .policy a:hover, .breadcrumbs .breadcrumb li a:hover, .pagination a:hover, .order a:hover,
+  .contact-page a:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -914,7 +916,7 @@ section h1 {
   text-align: center; }
 
 .flexcenter, .news__item a, .pagination .ditto_page,
-.pagination .current, .partnersList ul li a {
+.pagination .current, .partnersList ul li a, .btn-groups .btn-lightgrey {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -2133,18 +2135,81 @@ form .thank {
 
 /* =/catalog
 ---------------------------*/
-.order hr {
+.order hr,
+.contact-page hr {
   border: none;
   width: 460px;
   margin: 3rem auto;
   height: 1px;
   background: #d5d5d5; }
 
-.order a {
+.order a,
+.contact-page a {
   color: #0563bf; }
 
-.order .feedback__form {
+.order .feedback__form,
+.contact-page .feedback__form {
   margin-top: 3rem; }
+
+.btn-groups {
+  justify-content: center;
+  margin-top: 2.2rem; }
+  .btn-groups .btn-lightgrey {
+    background: #ececec;
+    border-radius: 3px;
+    color: #808080;
+    height: 32px;
+    margin: 0 4px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 152px;
+    transition: all .3s ease-out; }
+    .btn-groups .btn-lightgrey:hover, .btn-groups .btn-lightgrey.active, .btn-groups .btn-lightgrey.btn-active {
+      background-color: #0563bf;
+      text-decoration: none;
+      color: #fff; }
+
+.tab-content > .tab-pane {
+  display: none; }
+
+.tab-content > .active {
+  display: flex; }
+
+.contact-page .map {
+  margin-top: 3rem; }
+
+.contact-page .address .cell {
+  text-align: left; }
+
+.contact-page .tab-content {
+  color: #333;
+  margin-bottom: 2rem; }
+  .contact-page .tab-content .cell {
+    margin-right: 3rem;
+    line-height: 1.6; }
+
+.fade {
+  opacity: 0;
+  transition: opacity .15s linear; }
+  .fade.show {
+    opacity: 1; }
+
+.collapse {
+  display: none; }
+  .collapse.show {
+    display: block; }
+
+tr.collapse.show {
+  display: table-row; }
+
+tbody.collapse.show {
+  display: table-row-group; }
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height .35s ease; }
 
 /* =mobile-menu
 ---------------------------*/

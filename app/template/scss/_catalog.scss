@@ -5,9 +5,26 @@
 	margin-bottom: -25px;
 	.gallery__item{
 		width: 204px;
-		margin:0 25px 30px 0;
+		margin:0 60px 30px 0;
 		&:nth-child(5n){
 			margin-right: 0;
+		}
+	}
+	.flexbox{
+		justify-content: flex-start;
+	}
+
+	&__title{
+		font-size: 1.5rem;
+		@extend .bold;
+		color: $color3;
+		text-transform: uppercase;
+	}
+
+	&-objects{
+		figcaption{
+			height: 7.2rem;
+			font-size: 1.2rem;
 		}
 	}
 }

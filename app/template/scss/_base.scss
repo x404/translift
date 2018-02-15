@@ -181,6 +181,8 @@ i, em, .italic{
 
 
 
+
+
 .tdn{
 	text-decoration: none;
 	&:hover{
@@ -563,7 +565,6 @@ h1{
 		}
 	}
 	figcaption{
-		// @include transition-param(background-color, color);
 		transition: .3s background-color, color ease-out;
 		display: flex;
 		align-items: center;
@@ -588,17 +589,19 @@ h1{
 			}
 		}
 	}
-}
 
-/* =/listProducts
----------------------------*/
+	&-card{
+		margin-bottom: -1.5rem !important;
+		justify-content: flex-start;
+		a{
+			margin-bottom: 3.5rem;
+			margin-right: 58px;
+			&:nth-child(5n){
+				margin-right: 0;
+			}
+		}
+	}
 
-
-
-.gallery{
-	margin-top: 2rem;
-	flex-wrap: wrap;
-	justify-content: space-between;
 	img{
 		vertical-align: top;
 	}
@@ -633,6 +636,15 @@ h1{
 			}
 		}
 	}
+}
+
+/* =/listProducts
+---------------------------*/
+
+
+
+.gallery{
+
 }
 
 

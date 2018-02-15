@@ -834,7 +834,9 @@ h3 {
 .text strong, .modal-dialog .title, .catalog__title {
   font-family: "SegoeUIBold"; }
 
-i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, .pagination, .close-modal, #callback form, .btn-groups .btn-lightgrey {
+i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, main em, main i,
+.text em,
+.text i, .pagination, .close-modal, #callback form, .btn-groups .btn-lightgrey {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a, .pagination a, .order a,
@@ -1152,13 +1154,14 @@ h1 {
       .gallery__item:hover figcaption {
         background-color: #0563bf;
         color: #fff; }
-
-/* =/listProducts
----------------------------*/
-.gallery {
-  margin-top: 2rem;
-  flex-wrap: wrap;
-  justify-content: space-between; }
+  .gallery-card {
+    margin-bottom: -1.5rem !important;
+    justify-content: flex-start; }
+    .gallery-card a {
+      margin-bottom: 3.5rem;
+      margin-right: 58px; }
+      .gallery-card a:nth-child(5n) {
+        margin-right: 0; }
   .gallery img {
     vertical-align: top; }
   .gallery a:not(.gallery__item) {
@@ -1189,6 +1192,8 @@ h1 {
       .gallery a:not(.gallery__item):hover img {
         transform: scale(1.1); }
 
+/* =/listProducts
+---------------------------*/
 .map {
   margin-top: 60px; }
   .map #map {
@@ -1861,36 +1866,46 @@ main,
   main .gallery,
   .text .gallery {
     margin: 4rem 0; }
-  main table a,
-  .text table a {
+  main a,
+  .text a {
     font-family: "SegoeUIItalic"; }
-    main table a[href$=".pdf"], main table a[href$=".xls"], main table a[href$=".xlsx"], main table a[href$=".doc"], main table a[href$=".docx"],
-    .text table a[href$=".pdf"],
-    .text table a[href$=".xls"],
-    .text table a[href$=".xlsx"],
-    .text table a[href$=".doc"],
-    .text table a[href$=".docx"] {
+    main a[href$=".pdf"], main a[href$=".xls"], main a[href$=".xlsx"], main a[href$=".doc"], main a[href$=".docx"],
+    .text a[href$=".pdf"],
+    .text a[href$=".xls"],
+    .text a[href$=".xlsx"],
+    .text a[href$=".doc"],
+    .text a[href$=".docx"] {
       background-repeat: no-repeat;
       background-position: left center;
       display: flex;
       align-items: center;
       min-height: 32px;
       padding-left: 38px; }
-    main table a[href$=".pdf"],
-    .text table a[href$=".pdf"] {
+    main a[href$=".pdf"],
+    .text a[href$=".pdf"] {
       background-image: url(../images/pdf.png); }
-    main table a[href$=".xls"], main table a[href$=".xlsx"],
-    .text table a[href$=".xls"],
-    .text table a[href$=".xlsx"] {
+    main a[href$=".xls"], main a[href$=".xlsx"],
+    .text a[href$=".xls"],
+    .text a[href$=".xlsx"] {
       background-image: url(../images/doc.png); }
-    main table a[href$=".doc"], main table a[href$=".docx"],
-    .text table a[href$=".doc"],
-    .text table a[href$=".docx"] {
+    main a[href$=".doc"], main a[href$=".docx"],
+    .text a[href$=".doc"],
+    .text a[href$=".docx"] {
       background-image: url(../images/xls.png); }
-  main table td,
-  .text table td {
-    padding-top: 10px;
-    padding-bottom: 10px; }
+  main table,
+  .text table {
+    border-collapse: collapse; }
+    main table td,
+    .text table td {
+      padding-top: 10px;
+      padding-bottom: 10px; }
+    main table.table,
+    .text table.table {
+      margin: 1rem 0; }
+      main table.table td,
+      .text table.table td {
+        border: 1px solid #d5d5d5;
+        padding: 10px; }
 
 /* =breadcrumbs
 ---------------------------*/

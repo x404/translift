@@ -40,6 +40,10 @@ main,
 		@extend .bold;
 	}
 
+	em, i{
+		@extend .italic;
+	}
+
 	a{
 		color: #0563bf;
 		text-decoration: none;
@@ -72,38 +76,47 @@ main,
 		margin: 4rem 0;
 	}
 
+	a{
+		font-family: "SegoeUIItalic";
+		&[href$=".pdf"],
+		&[href$=".xls"],
+		&[href$=".xlsx"],
+		&[href$=".doc"],
+		&[href$=".docx"]
+		{
+			background-repeat: no-repeat;
+			background-position: left center;
+			display: flex;
+			align-items: center;
+			min-height: 32px;
+			padding-left: 38px;
+		}
+		&[href$=".pdf"]{
+			background-image: url(../images/pdf.png);
+		}
+		&[href$=".xls"],
+		&[href$=".xlsx"]{
+			background-image: url(../images/doc.png);
+		}
+		&[href$=".doc"],
+		&[href$=".docx"]{
+			background-image: url(../images/xls.png);
+		}
+	}
 
 	table{
-		a{
-			font-family: "SegoeUIItalic";
-			&[href$=".pdf"],
-			&[href$=".xls"],
-			&[href$=".xlsx"],
-			&[href$=".doc"],
-			&[href$=".docx"]
-			{
-				background-repeat: no-repeat;
-				background-position: left center;
-				display: flex;
-				align-items: center;
-				min-height: 32px;
-				padding-left: 38px;
-			}
-			&[href$=".pdf"]{
-				background-image: url(../images/pdf.png);
-			}
-			&[href$=".xls"],
-			&[href$=".xlsx"]{
-				background-image: url(../images/doc.png);
-			}
-			&[href$=".doc"],
-			&[href$=".docx"]{
-				background-image: url(../images/xls.png);
-			}
-		}
+		border-collapse: collapse;
 		td{
 			padding-top: 10px;
 			padding-bottom: 10px;
+		}
+
+		&.table{
+			margin: 1rem 0;
+			td{
+				border: 1px solid #d5d5d5;
+				padding: 10px;
+			}
 		}
 	}
 }

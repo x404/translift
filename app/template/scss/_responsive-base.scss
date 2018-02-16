@@ -20,6 +20,21 @@
 }
 
 @media (max-width: 1024px){
+	.header{
+		&__bottom{
+			display: block;
+			.contacts{
+				text-align: center;
+				border-left: none;
+				margin-bottom: 1rem;
+			}
+		}
+		&__nav{
+			nav{
+				width: 100%;
+			}
+		}
+	}
 }
 
 @media (max-width: 991px){
@@ -52,6 +67,42 @@
 }
 
 @media (max-width: 767px){
+	.header{
+		&__top{
+			display: block;
+			.logo{
+				flex-direction: column;
+				a{
+					margin-bottom: 1rem;
+				}
+			}
+			.qsearch{
+				margin-top: 3rem;
+				display: flex;
+				justify-content: center;
+				form{
+					width: 50%;
+				}
+				.form-control{
+					width: 100%;
+					flex-grow: 1;
+					border: 1px solid #d5d5d5;
+				}
+			}
+		}
+
+		&__bottom{
+			.contacts{
+				margin-top: 1.5rem;
+				height: auto;
+				a{
+					display: inline-block;
+					margin-top: 1rem;
+					width: 100%;
+				}
+			}
+		}
+	}
 }
 
 

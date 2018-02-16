@@ -1022,9 +1022,9 @@ nav {
         font-family: 'CenturyGothic';
         opacity: 0;
         right: 0px;
-        padding-top: 30px;
+        padding-top: 19px;
         position: absolute;
-        top: 5px;
+        top: 17px;
         transition: opacity .3s;
         width: 210px;
         z-index: -1; }
@@ -1032,7 +1032,7 @@ nav {
           background: url("data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAAAAAAevcqWAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiAgwUOxHqYziXAAAAVElEQVQI11XHMQ6AIAxA0U8xEqLS+5+PK+DgVIcCgbe9YCzsla01ytYvy9qmyFqWW22kNG+1gTJutQFl3JvPfi+Kv5fiH70OQGZRAJkND4CMckeAH57XKZMZd92pAAAAAElFTkSuQmCC") no-repeat right top;
           width: 15px;
           height: 15px;
-          top: 15px;
+          top: 4px;
           right: 16px; }
       nav .nav-tabs > li > a {
         transition: .3s color ease-out;
@@ -1182,9 +1182,9 @@ h1 {
       left: 50%;
       margin-left: -30px;
       margin-top: -30px;
+      opacity: 0;
       top: 50%;
-      width: 59px;
-      opacity: 0; }
+      width: 59px; }
     .gallery a:not(.gallery__item) img {
       -webkit-transition: transform 0.2s ease-out;
       transition: transform 0.2s ease-out; }
@@ -1708,7 +1708,7 @@ label.error {
   content: '';
   position: absolute;
   top: -2px;
-  left: 0;
+  left: 1px;
   width: 28px;
   height: 28px;
   background-color: #fff;

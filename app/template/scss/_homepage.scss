@@ -86,9 +86,7 @@
 			top: 0;
 			left: 50%;
 			margin-left: -585px;
-
 			width: 1170px;
-
 			top: 50%;
 			.owl-{
 				&prev,
@@ -117,6 +115,10 @@
 .homepage{
 	.row{
 		margin-top: 15px;
+	}
+
+	.text{
+		padding-bottom: 0;
 	}
 }
 
@@ -178,14 +180,19 @@
 	}
 	.num{
 		@extend .bold;
-		background: $color3;
-		border-radius: 50%;
 		color: $color2;
 		font-size: 2rem;
 		font-weight: normal;
-		padding-top: .3rem;
 		position: relative;
 		text-align: center;
+		i{
+			padding-top: .3rem;
+			background: $color3;
+			font-family: "SegoeUIRegular";
+			font-style: normal;
+			border-radius: 50%;
+			display: block;			
+		}
 		p{
 			font-family: "SegoeUIRegular";
 			font-size: 1.4rem;
@@ -193,6 +200,11 @@
 			position: absolute;
 			top: -30px;
 			white-space: nowrap;
+		}
+
+		a{
+			color: $color3;
+			@extend .tdn;
 		}
 
 		&-even{
@@ -203,17 +215,23 @@
 		}
 
 		&-small{
-			@include size(3.5rem);
+			i{
+				@include size(3.5rem);				
+			}
 		}
 		&-middle{
-			@include size(4rem);
+			i{
+				@include size(4rem);
+				padding-top: .5rem;
+			}
 			font-size: 2rem;
-			padding-top: .5rem;
 		}
 		&-big{
-			@include size(4.5rem);
+			i{
+				@include size(4.5rem);				
+				padding-top: .7rem;
+			}
 			font-size: 2.2rem;
-			padding-top: .7rem;
 		}
 	}
 }

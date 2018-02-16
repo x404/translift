@@ -836,7 +836,7 @@ h3 {
 
 i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, main em, main i,
 .text em,
-.text i, .pagination, .close-modal, #callback form, .btn-groups .btn-lightgrey {
+.text i, .pagination, .close-modal, #callback form, .page-error, .btn-groups .btn-lightgrey {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .footer__bottom a, .footer .info a, .feedback .vcard .email, .policy a, .breadcrumbs .breadcrumb li a, .pagination a, .order a,
@@ -846,14 +846,14 @@ i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .
   .contact-page a:hover, .ajaxSearch_resultLink:hover {
     text-decoration: underline; }
 
-.tdu {
+.tdu, .page-error .box a {
   text-decoration: underline; }
-  .tdu:hover {
+  .tdu:hover, .page-error .box a:hover {
     text-decoration: none; }
 
 .before, nav .nav-tabs > li .subnav:before, .line:before, h1:before,
-.linetop:before, .share:before, .gallery a:not(.gallery__item):after, .footer .social a:after, .steps__scheme:after, .news__title:after, .ajaxSearch_resultsInfos:after,
-.ajaxSearch_grpResult:after {
+.linetop:before, .share:before, .page-error:before, .gallery a:not(.gallery__item):after, .footer .social a:after, .steps__scheme:after, .news__title:after, .ajaxSearch_resultsInfos:after,
+.ajaxSearch_grpResult:after, .page-error .box:before {
   content: "";
   display: block;
   position: absolute; }
@@ -1072,18 +1072,20 @@ nav {
 ---------------------------*/
 .line, h1,
 .linetop,
-.share {
+.share,
+.page-error {
   position: relative; }
   .line:before, h1:before,
   .linetop:before,
-  .share:before {
+  .share:before,
+  .page-error:before {
     border-bottom: 1px solid #d5d5d5;
     left: 50%;
     width: 40%;
     margin-left: -20%;
     bottom: 0; }
 
-.linetop:before, .share:before {
+.linetop:before, .share:before, .page-error:before {
   width: 460px;
   bottom: auto;
   top: -20px; }
@@ -2215,6 +2217,62 @@ form .thank {
 
 .ajaxSearch_resultLink {
   color: #0563bf; }
+
+.page-error {
+  background: url(../images/404.jpg) no-repeat left 85px;
+  min-height: 1120px;
+  position: relative; }
+  .page-error:before {
+    top: auto;
+    bottom: -10px; }
+  .page-error .main {
+    display: flex;
+    justify-content: center; }
+    .page-error .main .flexbox {
+      margin-left: 380px;
+      width: 230px;
+      flex-direction: column; }
+  .page-error .box {
+    background: #ececec;
+    border-radius: 10px;
+    line-height: 1.85;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+    position: relative; }
+    .page-error .box a {
+      color: #0563bf; }
+    .page-error .box:before {
+      width: 15px;
+      height: 14px; }
+    .page-error .box-arrow_top:before {
+      background: url("data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAAAAAAevcqWAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiAhAOKQYaOgMCAAAATklEQVQI11XHQRKDIBAAsLhY+P9X5bjToQeRYm45hs3IeLVHvPo9Y282sdf20VMp66MnzXpP1PUrcZbnV0Izf1edn/3E/VkNYlWF+PeAH+6VI2uYK0VYAAAAAElFTkSuQmCC") no-repeat right bottom;
+      top: -14px;
+      right: 16px; }
+    .page-error .box-arrow_bottom:before {
+      background: url("data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAOCAAAAADV4RkzAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiAhAOJgkNHQJcAAAATUlEQVQI103KMQ6DMBQFweFFLuH+90zlBAcKom9vN9JuF7w/nlrgKh6BSYFeFPy+Ram9Hf7uk8I4J+XZ267caftWHmOh6CtFXynna6UbZGsUrbeCJswAAAAASUVORK5CYII=") no-repeat left top;
+      bottom: -14px;
+      left: 16px; }
+  .page-error ul {
+    margin: 2.5rem 0; }
+    .page-error ul li {
+      margin-top: 1.5rem;
+      text-transform: uppercase;
+      text-align: center; }
+    .page-error ul a {
+      background: #ececec;
+      border-radius: 5px;
+      color: #808080;
+      display: block;
+      padding: 7px 0;
+      text-decoration: none;
+      width: 100%;
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
+      .page-error ul a:hover {
+        background: #0563bf;
+        color: #fff; }
 
 .btn-groups {
   justify-content: center;

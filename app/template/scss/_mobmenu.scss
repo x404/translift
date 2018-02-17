@@ -4,6 +4,17 @@ $color_2: #0563bf;
 
 /* =mobile-menu
 ---------------------------*/
+.show-sm,
+.navbar-toggle,
+.close-menu{
+	display: none;
+}
+/* =/mobile-menu
+---------------------------*/
+
+
+/* =mobile-menu
+---------------------------*/
 .navbar-toggle,
 .close-menu{
 	display: none;
@@ -15,14 +26,17 @@ $color_2: #0563bf;
 
 
 @media (max-width: 767px){
+	.show-sm{
+		display: block;
+	}
 	.navbar-toggle{
-		background-color: $color_2;
+		background-color:$color_2;
 		border: none;
 		cursor: pointer;
 		display: block;
 		height: 70px;
 		left: 0;
-		position: absolute;
+		position: fixed;
 		text-align: center;
 		top: 0;
 		width: 70px;
@@ -35,17 +49,15 @@ $color_2: #0563bf;
 			width: 30px;
 		}
 		&:hover{
-			background-color: $color_1;
+			// background-color: saturation(#0563bf, 150%);
 			.icon-bar{
-				background-color: $color_2;
+				// background-color:;
 			}
 		}
 	}
 
 
 	.o-menu{
-		.header{
-		}
 		.close-menu{
 			display: block;
 			transform: translate(0, 0);
@@ -53,8 +65,46 @@ $color_2: #0563bf;
 		#navbar{
 			display: block;
 			transform: translate(-15px, 0);
-			z-index: 9999;
+			z-index: 99999;
+			border-top: 0;
 		}
+
+		.mainnav__list{
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			overflow: auto;	
+		}
+
+		.mobinfo{
+			padding-left: 1rem;
+			a{
+				color: $color_1;
+				display: block;
+				margin: 1.8rem;
+				text-decoration: none;
+				&:hover{
+					text-decoration: underline;
+				}
+			}
+		}
+
+			.show-sm{
+				@include font-size(1.5);
+				padding-left: 3rem;
+				a{
+					color: $color2;
+					display: block;
+					margin: 1.8rem 0;
+					text-decoration: none;
+					border-bottom: none !important;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
 	}
 
 	.close-menu{
@@ -67,26 +117,37 @@ $color_2: #0563bf;
 		left: 215px;
 		background-color: $color_2;
 		border: none;
-		height: 70px;
-		position: absolute;
+		height: 58px;
+		position: fixed;
 		text-align: center;
 		top: 0;
-		width: 70px;
+		width: 58px;
 		z-index: 99;
+		img{
+			transition: transform .2s;			
+		}
+		&:hover img{
+			transform: rotate(90deg);
+		}
 	}
 
 
 	#navbar{
 		transition: all .2s ease-out;
-		background-color: $color_2;
-		color: $color_2;
+		background-color:$color_2;
+		color:$color_2;
 		display: block;
 		left: 0;
+		margin-top: 0;
 		padding-top: 15px;
-		position: absolute;
+		position: fixed;
 		top: 0;
+		bottom: 0;
 		transform: translate(-305px, 0);
 		width: 230px;
+		a{
+			border-bottom: none !important;
+		}
 		.container{
 			padding: 0;
 		}
@@ -94,13 +155,33 @@ $color_2: #0563bf;
 			background: none;
 			display: block;
 			font-size: 15px;
-			margin-top: 0;
 			padding-left: 15px;
-			ul{
-				position: static; 
+			.subnav{
+				display: none;
+				margin-top: -15px;
 				opacity: 1;
+				padding-top: 0;
+				padding-left: 0;
+				position: static;
+				min-width: 0;
+				text-align: left;
+				width: auto;
+				&:before{
+					display: none;
+				}
+				&-text{
+					display: none !important;
+				}
+
+			}
+
+			ul{
 				background: none;
+				display: block !important;
 				font-size: 14px !important;
+				opacity: 1;
+				padding: 0;
+				position: static; 
 				li:after{
 					top: 12px;
 				}
@@ -108,14 +189,23 @@ $color_2: #0563bf;
 			& > li.folder > a,
 			& > li.folder > span
 			{
+
 				&:after{
-					top: 24px !important;
+					background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAANCAYAAACUwi84AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIlJREFUeNpi+P//vw0QBwMxAzbMxMDA4ALEa4A4iQEbAKoSB+Lt/yEgBd0EGIMXiHdAFSVjUwDCfEC8C90kdEcJQa37A8T5QCyBzeUCQHwXalIfuiQTEHdBJecBsRGyJCMQ98N0YnMDTLIfahJcAQcQ9yJJYoRDEVSyF2oNhgIfIM7FJgnCAAEGAKmlN490MQwsAAAAAElFTkSuQmCC") no-repeat right top;
+					top: 22px !important;
+				}
+
+				&.open{
+					&:after{
+						@include rotation(90deg);
+					}
 				}
 			}
 			& > li.active > a{
 				text-decoration: underline;				
 			}
 			li{ // 1 level
+				padding: 0;
 				border-bottom: 1px solid #fff;
 				a, span{
 					color: $color_1;
@@ -139,18 +229,19 @@ $color_2: #0563bf;
 					color: #fff;
 				}
 
+
 				&.folder{
 					& > a,
 					& > span{
 						position: relative;
+						text-align: left;
 						&:after{
-							background: url(../images/arrow.png) no-repeat left bottom;
+							background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAANCAYAAACUwi84AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIlJREFUeNpi+P//vw0QBwMxAzbMxMDA4ALEa4A4iQEbAKoSB+Lt/yEgBd0EGIMXiHdAFSVjUwDCfEC8C90kdEcJQa37A8T5QCyBzeUCQHwXalIfuiQTEHdBJecBsRGyJCMQ98N0YnMDTLIfahJcAQcQ9yJJYoRDEVSyF2oNhgIfIM7FJgnCAAEGAKmlN490MQwsAAAAAElFTkSuQmCC") no-repeat right top;
 							content: "";
 							display: block;
 							height: 12px;
 							position: absolute;
-							right: 10px;
-							top: 9px;
+							right: 20px;
 							width: 8px;
 						}
 					}
@@ -163,48 +254,16 @@ $color_2: #0563bf;
 							background-position: left top;
 							width: 12px;
 							height: 8px;
-						}						
+						}
 					}
 
-					.folder{ // 2 level
-						padding-left: .5rem;
-						padding-right: 0;
-						& > a,
-						& > span{
-							&:after{
-								display: none;
-							}
-						}
-						li{
-							ul{
-								li{
-									position: relative;
-									a:before{
-										content: "-";
-										z-index: 10;
-										position: absolute;
-										left: 4px;
-										top: 8px;
-									}
-								}
-								&.folder{
-									& > ul{
-										display: none !important;										
-									}
-								}
-							}
-						}
-					}
 				}
 
 				&.active{
-					a, span{
-						// text-decoration: underline;
-					}
 					a{
 						&:hover{
 							color : #fff;
-						}						
+						}
 					}
 
 					& > ul{
@@ -217,21 +276,21 @@ $color_2: #0563bf;
 				}
 
 				ul{
+					border-top: none;
 					display: none;
 					font-size: 12px;
+					padding-bottom: 5px;
 					width: auto !important;
-					border-top: none;
 					li{
 						border-bottom: none;
 						padding-left: 7px;
 						a, span{
-							padding: 10px 0 10px 10px;
-
+							padding: 7px 0 7px 10px;
 						}
 						&.active,
 						&:hover{
 							border-bottom: none;
-							color: $color_2;
+							color:$color_2;
 						}
 
 						ul{ // 2level
@@ -258,6 +317,10 @@ $color_2: #0563bf;
 					}
 				}
 			}
+		}
+
+		.nav-tabs>li{
+			margin: 0;
 		}
 	}
 }

@@ -390,10 +390,9 @@ nav{
 				font-family: 'CenturyGothic';
 				// display: none;
 				opacity: 0;
-				right: 0px;
 				padding-top: 19px;
 				position: absolute;
-				// top: 5px;
+				right: 0px;
 				top: 17px;
 				transition: opacity .3s;
 				width: 210px;
@@ -417,9 +416,15 @@ nav{
 					border-bottom: 1px dashed;
 				}
 			}
-
-
-
+			&.active{
+				& > span,
+				& > a
+				{
+					cursor: default;
+					color: $color3;
+					border-bottom: 1px dashed;					
+				}
+			}
 			// 2level
 			ul{
 				border-radius: 10px;

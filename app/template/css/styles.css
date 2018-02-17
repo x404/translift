@@ -1021,9 +1021,9 @@ nav {
         text-align: right;
         font-family: 'CenturyGothic';
         opacity: 0;
-        right: 0px;
         padding-top: 19px;
         position: absolute;
+        right: 0px;
         top: 17px;
         transition: opacity .3s;
         width: 210px;
@@ -1040,6 +1040,11 @@ nav {
         nav .nav-tabs > li > a:hover {
           color: #0563bf;
           border-bottom: 1px dashed; }
+      nav .nav-tabs > li.active > span,
+      nav .nav-tabs > li.active > a {
+        cursor: default;
+        color: #0563bf;
+        border-bottom: 1px dashed; }
       nav .nav-tabs > li ul {
         border-radius: 10px;
         background-color: #d5d5d5;
@@ -2345,6 +2350,15 @@ tbody.collapse.show {
 
 /* =mobile-menu
 ---------------------------*/
+.show-sm,
+.navbar-toggle,
+.close-menu {
+  display: none; }
+
+/* =/mobile-menu
+---------------------------*/
+/* =mobile-menu
+---------------------------*/
 .navbar-toggle,
 .close-menu {
   display: none; }
@@ -2352,6 +2366,8 @@ tbody.collapse.show {
 /* =/mobile-menu
 ---------------------------*/
 @media (max-width: 767px) {
+  .show-sm {
+    display: block; }
   .navbar-toggle {
     background-color: #0563bf;
     border: none;
@@ -2359,7 +2375,7 @@ tbody.collapse.show {
     display: block;
     height: 70px;
     left: 0;
-    position: absolute;
+    position: fixed;
     text-align: center;
     top: 0;
     width: 70px;
@@ -2370,17 +2386,42 @@ tbody.collapse.show {
       height: 2px;
       margin: 8px auto;
       width: 30px; }
-    .navbar-toggle:hover {
-      background-color: #fff; }
-      .navbar-toggle:hover .icon-bar {
-        background-color: #0563bf; }
   .o-menu .close-menu {
     display: block;
     transform: translate(0, 0); }
   .o-menu #navbar {
     display: block;
     transform: translate(-15px, 0);
-    z-index: 9999; }
+    z-index: 99999;
+    border-top: 0; }
+  .o-menu .mainnav__list {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto; }
+  .o-menu .mobinfo {
+    padding-left: 1rem; }
+    .o-menu .mobinfo a {
+      color: #fff;
+      display: block;
+      margin: 1.8rem;
+      text-decoration: none; }
+      .o-menu .mobinfo a:hover {
+        text-decoration: underline; }
+  .o-menu .show-sm {
+    font-size: 15px;
+    font-size: 1.5rem;
+    padding-left: 3rem; }
+    .o-menu .show-sm a {
+      color: #fff;
+      display: block;
+      margin: 1.8rem 0;
+      text-decoration: none;
+      border-bottom: none !important; }
+      .o-menu .show-sm a:hover {
+        text-decoration: underline; }
   .close-menu {
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
@@ -2392,44 +2433,74 @@ tbody.collapse.show {
     left: 215px;
     background-color: #0563bf;
     border: none;
-    height: 70px;
-    position: absolute;
+    height: 58px;
+    position: fixed;
     text-align: center;
     top: 0;
-    width: 70px;
+    width: 58px;
     z-index: 99; }
+    .close-menu img {
+      transition: transform .2s; }
+    .close-menu:hover img {
+      transform: rotate(90deg); }
   #navbar {
     transition: all .2s ease-out;
     background-color: #0563bf;
     color: #0563bf;
     display: block;
     left: 0;
+    margin-top: 0;
     padding-top: 15px;
-    position: absolute;
+    position: fixed;
     top: 0;
+    bottom: 0;
     transform: translate(-305px, 0);
     width: 230px; }
+    #navbar a {
+      border-bottom: none !important; }
     #navbar .container {
       padding: 0; }
     #navbar ul.mainnav {
       background: none;
       display: block;
       font-size: 15px;
-      margin-top: 0;
       padding-left: 15px; }
-      #navbar ul.mainnav ul {
-        position: static;
+      #navbar ul.mainnav .subnav {
+        display: none;
+        margin-top: -15px;
         opacity: 1;
+        padding-top: 0;
+        padding-left: 0;
+        position: static;
+        min-width: 0;
+        text-align: left;
+        width: auto; }
+        #navbar ul.mainnav .subnav:before {
+          display: none; }
+        #navbar ul.mainnav .subnav-text {
+          display: none !important; }
+      #navbar ul.mainnav ul {
         background: none;
-        font-size: 14px !important; }
+        display: block !important;
+        font-size: 14px !important;
+        opacity: 1;
+        padding: 0;
+        position: static; }
         #navbar ul.mainnav ul li:after {
           top: 12px; }
       #navbar ul.mainnav > li.folder > a:after,
       #navbar ul.mainnav > li.folder > span:after {
-        top: 24px !important; }
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAANCAYAAACUwi84AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIlJREFUeNpi+P//vw0QBwMxAzbMxMDA4ALEa4A4iQEbAKoSB+Lt/yEgBd0EGIMXiHdAFSVjUwDCfEC8C90kdEcJQa37A8T5QCyBzeUCQHwXalIfuiQTEHdBJecBsRGyJCMQ98N0YnMDTLIfahJcAQcQ9yJJYoRDEVSyF2oNhgIfIM7FJgnCAAEGAKmlN490MQwsAAAAAElFTkSuQmCC") no-repeat right top;
+        top: 22px !important; }
+      #navbar ul.mainnav > li.folder > a.open:after,
+      #navbar ul.mainnav > li.folder > span.open:after {
+        -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg); }
       #navbar ul.mainnav > li.active > a {
         text-decoration: underline; }
       #navbar ul.mainnav li {
+        padding: 0;
         border-bottom: 1px solid #fff; }
         #navbar ul.mainnav li a, #navbar ul.mainnav li span {
           color: #fff;
@@ -2449,16 +2520,16 @@ tbody.collapse.show {
             background: none; }
         #navbar ul.mainnav li.folder > a,
         #navbar ul.mainnav li.folder > span {
-          position: relative; }
+          position: relative;
+          text-align: left; }
           #navbar ul.mainnav li.folder > a:after,
           #navbar ul.mainnav li.folder > span:after {
-            background: url(../images/arrow.png) no-repeat left bottom;
+            background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAANCAYAAACUwi84AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIlJREFUeNpi+P//vw0QBwMxAzbMxMDA4ALEa4A4iQEbAKoSB+Lt/yEgBd0EGIMXiHdAFSVjUwDCfEC8C90kdEcJQa37A8T5QCyBzeUCQHwXalIfuiQTEHdBJecBsRGyJCMQ98N0YnMDTLIfahJcAQcQ9yJJYoRDEVSyF2oNhgIfIM7FJgnCAAEGAKmlN490MQwsAAAAAElFTkSuQmCC") no-repeat right top;
             content: "";
             display: block;
             height: 12px;
             position: absolute;
-            right: 10px;
-            top: 9px;
+            right: 20px;
             width: 8px; }
         #navbar ul.mainnav li.folder ul.show {
           display: block; }
@@ -2467,22 +2538,6 @@ tbody.collapse.show {
           background-position: left top;
           width: 12px;
           height: 8px; }
-        #navbar ul.mainnav li.folder .folder {
-          padding-left: .5rem;
-          padding-right: 0; }
-          #navbar ul.mainnav li.folder .folder > a:after,
-          #navbar ul.mainnav li.folder .folder > span:after {
-            display: none; }
-          #navbar ul.mainnav li.folder .folder li ul li {
-            position: relative; }
-            #navbar ul.mainnav li.folder .folder li ul li a:before {
-              content: "-";
-              z-index: 10;
-              position: absolute;
-              left: 4px;
-              top: 8px; }
-          #navbar ul.mainnav li.folder .folder li ul.folder > ul {
-            display: none !important; }
         #navbar ul.mainnav li.active a:hover {
           color: #fff; }
         #navbar ul.mainnav li.active > ul {
@@ -2491,15 +2546,16 @@ tbody.collapse.show {
             font-weight: bold;
             text-decoration: underline; }
         #navbar ul.mainnav li ul {
+          border-top: none;
           display: none;
           font-size: 12px;
-          width: auto !important;
-          border-top: none; }
+          padding-bottom: 5px;
+          width: auto !important; }
           #navbar ul.mainnav li ul li {
             border-bottom: none;
             padding-left: 7px; }
             #navbar ul.mainnav li ul li a, #navbar ul.mainnav li ul li span {
-              padding: 10px 0 10px 10px; }
+              padding: 7px 0 7px 10px; }
             #navbar ul.mainnav li ul li.active, #navbar ul.mainnav li ul li:hover {
               border-bottom: none;
               color: #0563bf; }
@@ -2512,7 +2568,9 @@ tbody.collapse.show {
                 #navbar ul.mainnav li ul li ul li.folder.active > a {
                   text-decoration: underline; }
                 #navbar ul.mainnav li ul li ul li ul li.active a {
-                  text-decoration: underline; } }
+                  text-decoration: underline; }
+    #navbar .nav-tabs > li {
+      margin: 0; } }
 
 ::-ms-clear {
   display: none; }
@@ -2556,6 +2614,7 @@ tbody.collapse.show {
   .header__top {
     display: block; }
     .header__top .logo {
+      text-align: center;
       flex-direction: column; }
       .header__top .logo a {
         margin-bottom: 1rem; }
@@ -2575,7 +2634,12 @@ tbody.collapse.show {
     .header__bottom .contacts a {
       display: inline-block;
       margin-top: 1rem;
-      width: 100%; } }
+      width: 100%; }
+      .header__bottom .contacts a:not(.tel) {
+        border-bottom: none; }
+        .header__bottom .contacts a:not(.tel):hover {
+          text-decoration: underline;
+          border-bottom: none; } }
 
 @media (max-width: 630px) {
   .feedback__form .row {
@@ -2602,8 +2666,7 @@ tbody.collapse.show {
   .footer .objects .flexbox {
     margin-left: auto;
     margin-right: auto; }
-  .footer .cattitle {
-    text-align: center; }
+  .footer .cattitle,
   .footer .kreotif {
     text-align: center; }
   .footer .qsearch {
@@ -2615,14 +2678,32 @@ tbody.collapse.show {
     display: flex;
     text-align: center; }
     .footer .social a:after {
-      display: none; }
-  .header {
-    display: none; } }
+      display: none; } }
 
 @media (max-width: 500px) {
+  .header {
+    padding-top: 1rem;
+    margin-bottom: -2rem; }
+    .header__top .qsearch form {
+      width: 80%; }
+    .header__top .logo {
+      margin-left: 6rem; }
+      .header__top .logo a {
+        margin-right: 0; }
   .feedback__form {
     padding-left: 0;
     padding-right: 0; } }
+
+@media (max-width: 350px) {
+  .header__top .qsearch form {
+    width: 95%; }
+  .header__top .logo {
+    margin-left: 0;
+    margin-top: 0; }
+    .header__top .logo a {
+      transform: scale(0.9);
+      margin-right: 0;
+      margin-left: 6rem; } }
 
 @media (max-width: 1199px) {
   .homecarousel .owl-nav {

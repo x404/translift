@@ -2484,14 +2484,16 @@ tbody.collapse.show {
       padding-left: 15px; }
       #navbar ul.mainnav .subnav {
         display: none;
-        margin-top: -15px;
-        opacity: 1;
-        padding-top: 0;
-        padding-left: 0;
-        position: static;
+        margin-top: -8px;
         min-width: 0;
+        opacity: 1;
+        padding-left: 0;
+        padding-top: 0;
+        position: relative;
         text-align: left;
-        width: auto; }
+        top: 0;
+        width: auto;
+        z-index: 10; }
         #navbar ul.mainnav .subnav:before {
           display: none; }
         #navbar ul.mainnav .subnav-text {
@@ -2724,6 +2726,16 @@ tbody.collapse.show {
     padding-left: 15px;
     padding-right: 15px;
     text-align: justify; }
+    .text main,
+    main main {
+      padding-left: 0;
+      padding-right: 0; }
+  .row.text {
+    padding-left: 0;
+    padding-right: 0; }
+  .main main {
+    padding-left: 0;
+    padding-right: 0; }
   .page-error {
     background: none;
     min-height: auto; }
@@ -2823,6 +2835,12 @@ tbody.collapse.show {
   .catalog .gallery__item {
     margin-right: 20px; } }
 
+@media (max-width: 1366px) {
+  .partnersList ul li a {
+    margin-right: 14px; }
+  .gallery a:not(.gallery__item) {
+    margin-right: 15px; } }
+
 @media (max-width: 1199px) {
   .homecarousel .owl-nav {
     margin-left: -500px;
@@ -2911,7 +2929,7 @@ tbody.collapse.show {
   .homecarousel .owl-dots {
     bottom: .5rem; }
   .homepage .gallery {
-    margin-bottom: -2rem; }
+    margin-bottom: -1rem; }
   .map #map {
     height: 400px; }
   .ajaxSearch_grpResult {
@@ -3018,9 +3036,10 @@ tbody.collapse.show {
         margin-left: auto;
         margin-right: auto; }
     .steps__scheme:after {
+      background: linear-gradient(to bottom, #ffffff 0%, #0563bf 50%, #fff 100%);
+      left: 50%;
       height: 100%;
-      width: 1px;
-      background: linear-gradient(to bottom, #ffffff 0%, #0563bf 50%, #fff 100%); }
+      width: 1px; }
   .map {
     margin-top: 2rem; }
   .gallery__caption {
@@ -3061,4 +3080,6 @@ tbody.collapse.show {
     margin-left: auto;
     margin-right: auto; }
   .address .btn-groups a {
-    width: 90%; } }
+    width: 90%; }
+  .partnersList ul {
+    display: block; } }

@@ -158,14 +158,17 @@ $color_2: #0563bf;
 			padding-left: 15px;
 			.subnav{
 				display: none;
-				margin-top: -15px;
-				opacity: 1;
-				padding-top: 0;
-				padding-left: 0;
-				position: static;
+				margin-top: -8px;
 				min-width: 0;
+				opacity: 1;
+				padding-left: 0;
+				padding-top: 0;
+				position: relative;
 				text-align: left;
+				top: 0;
 				width: auto;
+				z-index: 10;
+
 				&:before{
 					display: none;
 				}

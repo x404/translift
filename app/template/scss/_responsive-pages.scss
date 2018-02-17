@@ -9,6 +9,15 @@
 	}
 }
 
+@media (max-width: 1366px){
+	.partnersList ul li a{
+		margin-right: 14px;
+	}
+
+	.gallery a:not(.gallery__item){
+		margin-right: 15px;
+	}
+}
 
 @media (max-width: 1199px){
 	.homecarousel{
@@ -208,7 +217,7 @@
 	}
 
 	.homepage .gallery{
-		margin-bottom: -2rem;
+		margin-bottom: -1rem;
 	}
 
 	.map #map{
@@ -392,9 +401,10 @@
 			}
 		}
 		&:after{
+			background: linear-gradient(to bottom, #ffffff 0%, #0563bf 50%, #fff 100%);
+			left: 50%;
 			height: 100%;
 			width: 1px;
-			background: linear-gradient(to bottom, #ffffff 0%, #0563bf 50%, #fff 100%);
 		}
 	}
 
@@ -479,5 +489,9 @@
 
 	.address .btn-groups a{
 		width: 90%;
+	}
+
+	.partnersList ul{
+		display: block;
 	}
 }

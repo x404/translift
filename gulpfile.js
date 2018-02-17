@@ -219,17 +219,18 @@ gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	// переносим css файлы
 	var buildCss = gulp.src([ // Переносим CSS стили в продакшен
 		config.templateDir + '/css/styles.min.css',
-		config.templateDir + 'css/owl.carousel.css'
+		config.templateDir + '/css/owl.carousel.css'
 	])
 	.pipe(gulp.dest(config.destDir + '/template/css'));
 
 	var buildFavicon = gulp.src('app/the_favicon/*.*').pipe(gulp.dest(config.destDir + '/the_favicon'));
-	var buildHtml = gulp.src('app/*.html').pipe(config.destDir);
-	var buildHtaccess = gulp.src('app/.htaccess').pipe(config.destDir );	
-	var buildrobots = gulp.src('app/robots.txt').pipe(config.destDir);	
-	var buildJs = gulp.src(config.templateDir + '/js/**/*').pipe(config.destDir + '/template/js');	
+	var buildHtml = gulp.src('app/*.html').pipe(gulp.dest(config.destDir + '/'));
+	var buildHtaccess = gulp.src('app/.htaccess').pipe(gulp.dest(config.destDir));
+	var buildrobots = gulp.src('app/robots.txt').pipe(gulp.dest(config.destDir));
+	var buildJs = gulp.src(config.templateDir + '/js/**/*').pipe(gulp.dest(config.destDir + '/template/js'));
+	var buildTmp = gulp.src('app/images/**/*').pipe(gulp.dest(config.destDir + '/images'));
 	var buildTmp = gulp.src('app/tmp/*').pipe(gulp.dest(config.destDir + '/tmp'));
-	var buildFonts = gulp.src(config.templateDir + '/fonts/**/*').pipe(config.destDir + '/template/fonts'); // Переносим шрифты в продакшен
+	var buildFonts = gulp.src(config.templateDir + '/fonts/**/*').pipe(gulp.dest(config.destDir + '/template/fonts')); // Переносим шрифты в продакшен
 	var buildOutdate = gulp.src('app/outdatedbrowser/**/*').pipe(gulp.dest(config.destDir + '/outdatedbrowser'));
 
 });
@@ -242,3 +243,10 @@ gulp.task('clear', function () {
 
 gulp.task('default', ['watcher']);
 
+
+
+// var config = {
+// 	templateDir : 'app/template',
+// 	destDir : 'dist',
+// 	libsDir : 'app/libs'
+// };

@@ -15,4 +15,76 @@ _::-webkit-:host:not(:root:root), .header{
 
 //ie11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	body{
+		display: block;
+	}
+
+	.visually-hidden{
+		display: none;
+	}
+
+	.news__item{
+		flex: 1 0 33%;
+		a{
+			display: block;
+			padding-top: 100px;
+		}
+	}
+
+	.share:before{
+		top: -10px;
+	}
+}
+
+.ie10{
+	body{
+		display: block;
+	}
+
+	.visually-hidden{
+		display: none;
+	}
+
+	.news__list{
+		display: block;
+	}
+	.news__item{
+		display: inline-block;
+		width: 30%;
+		margin-right: 2%;
+		vertical-align: top;
+		max-width: 100%;
+		a{
+			display: block;
+			padding-top: 100px;
+		}
+	}
+
+	.gallery{
+		display: block;
+		&__item,
+		a{
+			width: 19%;
+			display: inline-block;
+		}
+	}
+
+	.catalog :nth-child(5n).gallery__item{
+		margin-right: 60px;
+	}
+
+	.footer{
+		.objects .flexbox{
+			display: block;
+		}
+		.translift{
+			width: 20%;
+			display: block;
+		}
+
+		.qsearch{
+			display: block;
+			width: 30%;
+		}
+	}
 }

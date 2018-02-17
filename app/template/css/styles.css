@@ -957,6 +957,7 @@ section h1 {
       height: 31px;
       text-align: center;
       color: #0563bf;
+      border-radius: 3px 0 0 3px;
       /* FF 4-18 */
       /* FF 19+ */
       /* IE 10+ */ }
@@ -3076,9 +3077,11 @@ tbody.collapse.show {
     margin-left: -40%; } }
 
 @media (max-width: 412px) {
-  .partnersList ul li a {
-    margin-left: auto;
-    margin-right: auto; }
+  .partnersList {
+    margin-bottom: 0; }
+    .partnersList ul li a {
+      margin-left: auto;
+      margin-right: auto; }
   .address .btn-groups a {
     width: 90%; }
   .partnersList ul {

@@ -1,20 +1,31 @@
+.main{
+	.news{
+		&__list{
+			.news__item{
+				flex: 0 1 33.3%
+			}			
+		}
+	}
+}
 .news{
 	&__list{
 		justify-content: space-between;
 		padding-top: 1rem;
+
 	}
 	&__item{
 		@extend .bold;
-		flex-basis: 33.3%;
-		color: $color8;
-		text-align: center;
-		text-transform: uppercase;
-		filter: grayscale(1) brightness(230%);
 		@include transition-param(filter);
+		align-items: center;
+		color: $color8;
+		display: flex;
+		filter: grayscale(1) brightness(230%);
+		flex-basis: 33.3%;
 		height: 308px;
 		max-width: 350px;
-		display: flex;
-		align-items: center;
+		text-align: center;
+		text-transform: uppercase;
+		flex: 1;
 		a{
 			height: 308px;
 			border: 1px solid $color8;

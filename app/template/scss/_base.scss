@@ -483,7 +483,8 @@ nav{
 		@extend .before;
 		border-bottom: 1px solid $color4;
 		left: 50%;
-		$w: 40%;
+		// $w: 40%;
+		$w: 460px;
 		width: $w;
 		margin-left: -$w/2;
 		bottom: 0;

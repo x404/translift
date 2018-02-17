@@ -96,6 +96,7 @@
 				a{
 					display: inline-block;
 					margin-top: 1rem;
+					margin-left: 0 !important;
 					width: 100%;
 					&:not(.tel){
 						border-bottom: none;
@@ -113,6 +114,11 @@
 
 
 @media (max-width: 630px){
+	.breadcrumbs{
+		.breadcrumb{
+			display: block;
+		}		
+	}
 	.feedback{
 		&__form{
 			.row{
@@ -165,6 +171,7 @@
 		}
 
 		.qsearch{
+			padding-left: 0;
 			padding-bottom: 2rem;
 			text-align: center;
 			.flexbox{
@@ -210,6 +217,37 @@
 	}
 }
 
+
+
+@media (max-width: 480px){
+	.share,
+	h1{
+		&:before{
+			width: 80%;
+			margin-left: -40%;
+		}
+	}
+
+	main{
+		text-align: justify;
+	}
+}
+
+
+@media (max-width: 420px){
+	.share{
+		a{
+			margin-bottom: .5rem;
+		}
+	}
+
+	.header__top .qsearch{
+		margin-left: 5rem;
+		form{
+			width: 93%;
+		}
+	}
+}
 
 
 @media (max-width: 350px){

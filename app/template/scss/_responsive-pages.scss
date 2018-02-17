@@ -1,3 +1,11 @@
+@media (max-width: 1399px){
+	.news__list .news__item{
+		margin-right: 25px;
+		width: 250px;
+	}
+}
+
+
 @media (max-width: 1199px){
 	.homecarousel{
 		.owl-nav{
@@ -30,6 +38,9 @@
 	.clients__list{
 		a{
 			margin-bottom: 2rem;
+			&:nth-child(5){
+				display: none;
+			}
 		}
 	}
 
@@ -39,6 +50,27 @@
 		height: 270px;
 		a{
 			height: 100%;
+		}
+	}
+
+	.news{
+		.news__item{
+			&:nth-child(3){
+				padding-right: 0;
+			}
+		}
+	}
+
+
+	.news__list .news__item{
+		margin-right: 0;
+	}
+
+
+	// sertificats
+	.sertificatsList,{
+		.gallery__item{
+			margin-bottom: 1.5rem;
 		}
 	}
 }
@@ -66,6 +98,8 @@
 	.homecarousel{
 		margin-top: 2rem;
 	}
+
+
 }
 
 
@@ -84,7 +118,29 @@
 
 	.clients__list{
 		justify-content: space-around;
+		a{
+			&:nth-child(5){
+				display: flex;
+			}
+		}
 	}
+	// sertificats
+	.sertificatsList{
+		justify-content: center;
+		.gallery__item{
+			margin-right: 2.5rem;
+		}
+	}
+
+
+	.main .news__list{
+		justify-content: space-around;
+		.news__item{
+			margin-right: 0;
+			flex-basis: 50%;
+		}
+	}
+
 }
 
 
@@ -130,6 +186,10 @@
 		}
 	}
 
+	.homepage .gallery{
+		margin-bottom: -2rem;
+	}
+
 	.map #map{
 		height: 400px;
 	}
@@ -157,7 +217,34 @@
 				&:nth-child(3){
 					display: none;
 				}
+				&:nth-child(2){
+					padding-right: 0;
+				}
 			}
+		}
+	}
+
+	.partnersList{
+		ul{
+			justify-content: center
+		}
+	}
+}
+
+
+@media (max-width: 736px){
+	.sertificatsList,
+	.partnersList ul{
+		justify-content: space-around
+	}
+}
+
+
+@media (max-width: 690px){
+	.homepage{
+		.gallery a,
+		.gallery__item{
+			margin-right: 1rem;
 		}
 	}
 }
@@ -189,6 +276,14 @@
 }
 
 
+@media (max-width: 550px){
+	.main .news__list .news__item{
+		flex-basis: 100%;
+		padding-right: 0;
+	}
+}
+
+
 @media (max-width: 500px){
 	.clients__list{
 		display: block;
@@ -206,7 +301,7 @@
 			margin-bottom: 1.5rem !important;
 			width: 205px;
 			margin-left: auto;
-			margin-right: auto;
+			margin-right: auto !important;
 		}
 	}
 
@@ -249,5 +344,24 @@
 	.gallery__caption{
 		text-align: center;
 		justify-content: center;
+	}
+
+	.logotype{
+		padding: 2rem 0;
+	}
+
+	.pagination .flexbox{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
+
+@media (max-width: 412px){
+	.partnersList ul li{
+		a{
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }

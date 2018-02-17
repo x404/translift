@@ -36,7 +36,6 @@
 		.email{
 			margin-left: .5rem;
 			@extend .tdn;
-			// color: $color11;
 		}
 		p{
 			font-size: 14px;
@@ -86,6 +85,7 @@
 
 			input.form-control{
 				@extend .italic;
+				font-style: normal;
 				@include placeholder($color7);
 				border-radius: 3px;
 				height: 38px;
@@ -101,6 +101,8 @@
 				overflow: hidden;
 				height: 8.5rem;
 				@include placeholder($color7);
+				font-style: normal;
+				@extend .italic;
 			}
 
 			.error{

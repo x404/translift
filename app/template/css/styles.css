@@ -781,7 +781,7 @@ h1, .title {
   font-weight: normal; }
 
 h2 {
-  font-size: 2.4rem; }
+  font-size: 1.6rem; }
 
 h3 {
   font-size: 1.6rem; }
@@ -830,11 +830,12 @@ h3 {
   font-family: 'CenturyGothic';
   src: url("../fonts/CenturyGothic.woff2") format("woff2"), url("../fonts/CenturyGothic.woff") format("woff"), url("../fonts/CenturyGothic.ttf") format("truetype"); }
 
-.bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, main strong,
-.text strong, .modal-dialog .title, .catalog__title {
+.bold, h1, .title, .footer .cattitle, .homecarousel .item .more, .steps .num, .news__item, main strong, main b,
+.text strong,
+.text b, .modal-dialog .title, .catalog__title {
   font-family: "SegoeUIBold"; }
 
-i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .policy, main em, main i,
+i, em, .italic, .header__bottom .contacts a:not(.tel), .more, .footer__bottom, .footer .translift, .footer .info a, .footer .qsearch, .btn, .feedback__form .row input.form-control, .feedback__form .row textarea, .policy, main em, main i,
 .text em,
 .text i, .pagination, .close-modal, #callback form, .page-error, .btn-groups .btn-lightgrey {
   font-family: "SegoeUIItalic"; }
@@ -1244,11 +1245,11 @@ h1 {
         font-size: 18px;
         display: inline-block;
         margin-bottom: .5rem; }
-      .footer .translift a:not(.tel) {
+      .footer .translift a:not(.tel):not(.logo) {
         -webkit-transition: border 0.2s ease-out;
         transition: border 0.2s ease-out;
         border-bottom: 1px dashed transparent; }
-        .footer .translift a:not(.tel):hover {
+        .footer .translift a:not(.tel):not(.logo):hover {
           border-bottom: 1px dashed #fff; }
     .footer .translift .logo {
       display: block; }
@@ -1649,6 +1650,7 @@ label.error {
         .feedback__form .row textarea:disabled:focus:-ms-input-placeholder {
           transition: line-height 0.5s ease; }
     .feedback__form .row input.form-control {
+      font-style: normal;
       border-radius: 3px;
       height: 38px;
       padding-bottom: 4px;
@@ -1671,7 +1673,8 @@ label.error {
       border-radius: 3px;
       flex: 1;
       overflow: hidden;
-      height: 8.5rem; }
+      height: 8.5rem;
+      font-style: normal; }
       .feedback__form .row textarea::-webkit-input-placeholder {
         color: #b2b2b2; }
       .feedback__form .row textarea::-moz-placeholder {
@@ -1861,6 +1864,14 @@ main,
   main p,
   .text p {
     margin: 20px 0; }
+  main strong, main b,
+  .text strong,
+  .text b {
+    font-weight: normal; }
+  main em, main i,
+  .text em,
+  .text i {
+    font-style: normal; }
   main a,
   .text a {
     color: #0563bf;
@@ -2174,15 +2185,16 @@ form .thank {
   margin-top: -15px;
   margin-bottom: -25px; }
   .catalog .gallery__item {
-    width: 204px;
-    margin: 0 60px 30px 0; }
+    margin: 0 60px 30px 0;
+    width: 204px; }
     .catalog .gallery__item:nth-child(5n) {
       margin-right: 0; }
   .catalog .flexbox {
     justify-content: flex-start; }
   .catalog__title {
-    font-size: 1.5rem;
     color: #0563bf;
+    font-size: 1.5rem;
+    font-weight: normal;
     text-transform: uppercase; }
   .catalog-objects .gallery__caption {
     height: 7.2rem;
@@ -2220,11 +2232,11 @@ form .thank {
   padding-bottom: 25px; }
   .ajaxSearch_resultsInfos:after,
   .ajaxSearch_grpResult:after {
-    width: 510px;
+    width: 460px;
     height: 1px;
     left: 50%;
     bottom: 0;
-    margin-left: -255px;
+    margin-left: -230px;
     border-bottom: 1px solid #d5d5d5; }
 
 .ajaxSearch_result {
@@ -2599,6 +2611,12 @@ tbody.collapse.show {
     width: 100%; } }
 
 @media (max-width: 991px) {
+  .table-responsive {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar; }
   .footer .flexbox {
     flex-wrap: wrap; }
   .footer .translift {
@@ -2645,6 +2663,19 @@ tbody.collapse.show {
         .header__bottom .contacts a:not(.tel):hover {
           text-decoration: underline;
           border-bottom: none; } }
+
+@media (max-width: 690px) {
+  .text,
+  main {
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify; }
+  .page-error {
+    background: none;
+    min-height: auto; }
+    .page-error .main .flexbox {
+      margin-left: 0;
+      width: 80%; } }
 
 @media (max-width: 630px) {
   .breadcrumbs .breadcrumb {
@@ -2700,15 +2731,15 @@ tbody.collapse.show {
         margin-right: 0; }
   .feedback__form {
     padding-left: 0;
-    padding-right: 0; } }
+    padding-right: 0; }
+  .page-error:before {
+    display: none; } }
 
 @media (max-width: 480px) {
   .share:before,
   h1:before {
     width: 80%;
-    margin-left: -40%; }
-  main {
-    text-align: justify; } }
+    margin-left: -40%; } }
 
 @media (max-width: 420px) {
   .share a {
@@ -2727,12 +2758,16 @@ tbody.collapse.show {
     .header__top .logo a {
       transform: scale(0.9);
       margin-right: 0;
-      margin-left: 6rem; } }
+      margin-left: 6rem; }
+  .page-error .main .flexbox {
+    width: 95%; } }
 
 @media (max-width: 1399px) {
   .news__list .news__item {
     margin-right: 25px;
-    width: 250px; } }
+    width: 250px; }
+  .catalog .gallery__item {
+    margin-right: 20px; } }
 
 @media (max-width: 1199px) {
   .homecarousel .owl-nav {
@@ -2760,7 +2795,11 @@ tbody.collapse.show {
   .news__list .news__item {
     margin-right: 0; }
   .sertificatsList .gallery__item {
-    margin-bottom: 1.5rem; } }
+    margin-bottom: 1.5rem; }
+  .catalog .flexbox {
+    justify-content: space-around; }
+  .catalog .gallery__item:nth-child(5n) {
+    margin-right: 20px; } }
 
 @media (max-width: 1050px) {
   .homecarousel .owl-nav {
@@ -2792,7 +2831,9 @@ tbody.collapse.show {
     justify-content: space-around; }
     .main .news__list .news__item {
       margin-right: 0;
-      flex-basis: 50%; } }
+      flex-basis: 50%; }
+  .gallery-card a {
+    margin-right: 38px; } }
 
 @media (max-width: 930px) {
   .homecarousel .owl-nav {
@@ -2818,7 +2859,21 @@ tbody.collapse.show {
   .homepage .gallery {
     margin-bottom: -2rem; }
   .map #map {
-    height: 400px; } }
+    height: 400px; }
+  .ajaxSearch_grpResult {
+    margin-left: 15px;
+    margin-right: 15px; } }
+
+@media (max-width: 767px) {
+  .gallery-card a {
+    margin-right: 25px; }
+    .gallery-card a:last-child {
+      margin-right: 0; }
+  .address .btn-groups {
+    flex-wrap: wrap;
+    margin-bottom: -1rem; }
+    .address .btn-groups a {
+      margin-bottom: .8rem; } }
 
 @media (max-width: 750px) {
   .homecarousel .item .description {
@@ -2842,7 +2897,15 @@ tbody.collapse.show {
 @media (max-width: 736px) {
   .sertificatsList,
   .partnersList ul {
+    justify-content: space-around; }
+  .gallery-card a {
+    margin-right: 15px; }
+  .gallery-card {
     justify-content: space-around; } }
+
+@media (max-width: 720px) {
+  .catalog__title {
+    text-align: center; } }
 
 @media (max-width: 690px) {
   .homepage .gallery a,
@@ -2909,13 +2972,39 @@ tbody.collapse.show {
   .gallery__caption {
     text-align: center;
     justify-content: center; }
+  .gallery-card {
+    margin-bottom: 2rem !important; }
   .logotype {
     padding: 2rem 0; }
   .pagination .flexbox {
     padding-left: 10px;
-    padding-right: 10px; } }
+    padding-right: 10px; }
+  .catalog {
+    margin-bottom: 0; }
+    .catalog .gallery__item {
+      margin-left: auto;
+      margin-right: auto; }
+  .contact-page hr,
+  .order hr {
+    width: 90%; }
+  .map .tab-pane .flexbox {
+    display: block; }
+    .map .tab-pane .flexbox .cell {
+      text-align: center; }
+    .map .tab-pane .flexbox .cell:first-child {
+      margin-bottom: 1.5rem; }
+  .ajaxSearch_grpResult {
+    text-align: justify; } }
+
+@media (max-width: 480px) {
+  .ajaxSearch_grpResult:after,
+  .ajaxSearch_resultsInfos:after {
+    width: 80%;
+    margin-left: -40%; } }
 
 @media (max-width: 412px) {
   .partnersList ul li a {
     margin-left: auto;
-    margin-right: auto; } }
+    margin-right: auto; }
+  .address .btn-groups a {
+    width: 90%; } }

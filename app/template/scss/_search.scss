@@ -14,7 +14,7 @@
 	padding-bottom: 25px;
 	&:after{
 		@extend .before;
-		$w: 510px;
+		$w: 460px;
 		width: $w;
 		height: 1px;
 		left: 50%;

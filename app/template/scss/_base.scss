@@ -104,7 +104,8 @@ h1, .title{
 	@extend .bold;
 	font-weight: normal;
 }
-h2{font-size:2.4rem}
+// h2{font-size:2.4rem}
+h2{font-size:1.6rem}
 h3{font-size:1.6rem}
 
 
@@ -716,7 +717,7 @@ h1{
 				display: inline-block;
 				margin-bottom: .5rem;
 			}
-			&:not(.tel){
+			&:not(.tel, .logo){
 				@include transition-param(border);
 				border-bottom: 1px dashed rgba(0,0,0,0);
 				&:hover{

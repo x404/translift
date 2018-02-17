@@ -134,8 +134,8 @@
 					<a href="/" class="logo"><img src="/template/images/logo2.png" alt="Транслифт" /></a>
 					<p>Компания Транслифт Рус - официальный дистрибьютор KLEEMANN</p>
 					<div class="contacts">
-						<a href="tel:+74952595109" class="tel">+7 (495) 259-51-09</a>
-						<a href="#" title="">перезвонить?</a>
+						<a href="tel:+74952595109" class="tel">+7 (495) 259-51-09</a> <br>
+						<a href="#" title="" class="md-trigger" data-modal="callback">перезвонить?</a>
 					</div>
 				</div>
 				<div class="info">

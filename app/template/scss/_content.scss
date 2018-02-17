@@ -36,12 +36,14 @@ main,
 		margin: 20px 0;
 	}
 
-	strong{
+	strong, b{
 		@extend .bold;
+		font-weight: normal;
 	}
 
 	em, i{
 		@extend .italic;
+		font-style: normal;
 	}
 
 	a{

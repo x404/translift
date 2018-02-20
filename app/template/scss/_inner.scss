@@ -4,7 +4,8 @@
 	font-family: "SegoeUIItalic";	
 	margin-top: 5.5rem;
 	text-transform: lowercase;	
-	.breadcrumb{
+	.breadcrumb,
+	.B_crumbBox{
 		display: flex;
 		color: $color7;
 		li{
@@ -52,7 +53,9 @@
 
 	}
 	.ditto_page,
-	.current{
+	.current,
+	.sisea-current-page
+	{
 		@extend .flexcenter;
 		$s: 24px;
 		width: $s;
@@ -69,7 +72,8 @@
 		}
 	}
 	.ditto_page:hover,
-	.current{
+	.current,
+	.sisea-current-page{
 		background-color: $color8;
 		color: $color2;
 	}

@@ -26,9 +26,7 @@ $(document).ready(function(){
 			},
 			openMenu = function(e){
 				e.preventDefault();
-				// let h = $(window).height();
 				$('body').addClass('o-menu');
-				// $('#navbar').height(h);
 			},
 			closeMenu = function(e){
 				e.preventDefault();
@@ -50,9 +48,6 @@ $(document).ready(function(){
 
 	// var thank = '<div class="thank text-center"><p>Спасибо за заказ продукта на нашем сайте. В ближайщее время с вами свяжутся наши менеджеры для уточнения всех деталей.</p></div>';
 	var thankcallback = '<div class="thank text-center"><p>В ближайщее время с вами свяжутся наши менеджеры для уточнения всех деталей</p></div>';
-	// var thankaddreview = '<div class="thank text-center"><p>Ваш отзыв отправлен!</p></div>';
-	// var thankreview = '<div class="thank text-center"><p>Спасибо за оставленный отзыв.</p></div>';
-	// var thankqorder = '<div class="thank text-center"><p>Спасибо за заказ продукта на нашем сайте. В ближайщее время с вами свяжутся наши менеджеры для уточнения всех деталей.</p></div>';
 	var errorTxt = 'Возникла ошибка при отправке заявки!';
 
 
@@ -155,9 +150,6 @@ $(document).ready(function(){
 			});
 		}
 	});
-
-
-
 });
 
 // =заглушка для IE
@@ -210,8 +202,6 @@ $('body').on('click','[data-coord]', function(e) {
 		lat = $this[0],
 		lon = $this[1];
 	map.setCenter([lat, lon], 16);
-	// $('.btn-active').removeClass('btn-active');
-	// $(this).addClass('btn-active');
 });
 
 
@@ -256,6 +246,7 @@ function showTime(sendform){
 		}
 	}
 }
+
 function stopClock(){
 	window.clearInterval(timer);
 	timer = null;
@@ -268,11 +259,26 @@ function startClock(sendform){
 }
 
 
-
-
 // показываем второй  уровень меню
 $(document).on('click', '.o-menu .folder > a, .o-menu .folder > span', function(e){
 	e.preventDefault();
 	var $this = $(this);
 	$this.next('.subnav').slideToggle().prev().toggleClass('open');
 })
+
+
+// search logic
+$(document).on('click', '.qsearch .submit', function(e){
+	var str = $(this).closest('div').find('.form-control').val();
+	if (isEmpty(str) || isBlank(str)){
+		e.preventDefault();
+	}	
+})
+
+function isEmpty(str) {
+	return (!str || 0 === str.length);
+}
+
+function isBlank(str) {
+	return (!str || /^\s*$/.test(str));
+}

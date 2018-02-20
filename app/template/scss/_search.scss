@@ -1,4 +1,5 @@
-.ajaxSearch_resultsInfos{
+.ajaxSearch_resultsInfos,
+.sisea-results{
 	text-transform: uppercase;
 	text-align: center;
 	padding-top: 10px;
@@ -8,6 +9,7 @@
 	color: $color3;
 }
 
+.sisea-results,
 .ajaxSearch_resultsInfos,
 .ajaxSearch_grpResult{
 	position: relative;
@@ -36,4 +38,29 @@
 .ajaxSearch_resultLink{
 	color: $color3;
 	@extend .tdn;
+}
+
+
+
+
+.sisea-results-list{
+	h3{
+		font-size: 14px;
+		font-weight: normal;
+		a{
+			color: $color3;
+			@extend .tdn;		
+		}
+	}
+	.extract{
+		margin-top: .7rem;
+	}
+
+	.sisea-result{
+		margin: 2.5rem 0;
+	}
+
+	.sisea-highlight{
+		background: yellow;
+	}
 }

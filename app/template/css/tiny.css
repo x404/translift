@@ -1,0 +1,153 @@
+/* font-family: "SegoeUIRegular"; */
+@font-face {
+  font-family: "SegoeUIRegular";
+  src: url("../fonts/SegoeUIRegular/SegoeUIRegular.eot");
+  src: url("../fonts/SegoeUIRegular/SegoeUIRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUIRegular/SegoeUIRegular.woff") format("woff"), url("../fonts/SegoeUIRegular/SegoeUIRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "SegoeUIBold"; */
+@font-face {
+  font-family: "SegoeUIBold";
+  src: url("../fonts/SegoeUIBold/SegoeUIBold.eot");
+  src: url("../fonts/SegoeUIBold/SegoeUIBold.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUIBold/SegoeUIBold.woff") format("woff"), url("../fonts/SegoeUIBold/SegoeUIBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "SegoeUIItalic"; */
+@font-face {
+  font-family: "SegoeUIItalic";
+  src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot");
+  src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUIItalic/SegoeUIItalic.woff") format("woff"), url("../fonts/SegoeUIItalic/SegoeUIItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "SegoeUILight"; */
+@font-face {
+  font-family: "SegoeUILight";
+  src: url("../fonts/SegoeUILight/SegoeUILight.eot");
+  src: url("../fonts/SegoeUILight/SegoeUILight.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUILight/SegoeUILight.woff") format("woff"), url("../fonts/SegoeUILight/SegoeUILight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+/* font-family: "SegoeUISemiBold"; */
+@font-face {
+  font-family: "SegoeUISemiBold";
+  src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.eot");
+  src: url("../fonts/SegoeUISemiBold/SegoeUISemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUISemiBold/SegoeUISemiBold.woff") format("woff"), url("../fonts/SegoeUISemiBold/SegoeUISemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+.bold, strong, b {
+  font-family: "SegoeUIBold"; }
+
+i, em, .italic, em, i {
+  font-family: "SegoeUIItalic"; }
+
+.justifyleft {
+  text-align: left !important; }
+
+.justifyright {
+  text-align: right !important; }
+
+.justifycenter {
+  text-align: center !important; }
+
+.justifyfull {
+  text-align: justify !important; }
+
+img.justifyleft, table.justifyleft {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px; }
+
+img.justifyright, table.justifyright {
+  float: right;
+  margin-left: 10px;
+  margin-bottom: 5px; }
+
+img.justifycenter, table.justifycenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+body {
+  color: #333;
+  font-family: "SegoeUIRegular";
+  font-size: 14px; }
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #0563bf; }
+  h1:after {
+    bottom: 6px; }
+
+ul {
+  list-style: none; }
+  ul li {
+    position: relative; }
+    ul li:before {
+      content: "-";
+      margin-right: 5px; }
+
+p {
+  margin: 20px 0; }
+
+strong, b {
+  font-weight: normal; }
+
+em, i {
+  font-style: normal; }
+
+a {
+  color: #0563bf;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+h2 {
+  font-family: "SegoeUIBold";
+  font-size: 18px;
+  font-weight: normal; }
+
+h3 {
+  font-family: "SegoeUIBold";
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 0; }
+
+h4 {
+  font-family: "SegoeUIBold";
+  font-size: 13px;
+  font-weight: normal; }
+
+.gallery {
+  margin: 4rem 0; }
+
+a {
+  font-family: "SegoeUIItalic"; }
+  a[href$=".pdf"], a[href$=".xls"], a[href$=".xlsx"], a[href$=".doc"], a[href$=".docx"] {
+    background-repeat: no-repeat;
+    background-position: left center;
+    display: flex;
+    align-items: center;
+    min-height: 32px;
+    padding-left: 38px; }
+  a[href$=".pdf"] {
+    background-image: url(../images/pdf.png); }
+  a[href$=".xls"], a[href$=".xlsx"] {
+    background-image: url(../images/doc.png); }
+  a[href$=".doc"], a[href$=".docx"] {
+    background-image: url(../images/xls.png); }
+
+table {
+  border-collapse: collapse; }
+  table td {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  table.table {
+    margin: 1rem 0; }
+    table.table td {
+      border: 1px solid #d5d5d5;
+      padding: 10px; }
